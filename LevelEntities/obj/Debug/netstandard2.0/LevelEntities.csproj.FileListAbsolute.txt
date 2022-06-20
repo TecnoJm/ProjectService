@@ -1,0 +1,10 @@
+C:\Users\JMich\source\repos\ProjectService\LevelEntities\bin\Debug\netstandard2.0\LevelEntities.deps.json
+C:\Users\JMich\source\repos\ProjectService\LevelEntities\bin\Debug\netstandard2.0\LevelEntities.dll
+C:\Users\JMich\source\repos\ProjectService\LevelEntities\bin\Debug\netstandard2.0\LevelEntities.pdb
+C:\Users\JMich\source\repos\ProjectService\LevelEntities\obj\Debug\netstandard2.0\LevelEntities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JMich\source\repos\ProjectService\LevelEntities\obj\Debug\netstandard2.0\LevelEntities.AssemblyInfoInputs.cache
+C:\Users\JMich\source\repos\ProjectService\LevelEntities\obj\Debug\netstandard2.0\LevelEntities.AssemblyInfo.cs
+C:\Users\JMich\source\repos\ProjectService\LevelEntities\obj\Debug\netstandard2.0\LevelEntities.csproj.CoreCompileInputs.cache
+C:\Users\JMich\source\repos\ProjectService\LevelEntities\obj\Debug\netstandard2.0\LevelEntities.dll
+C:\Users\JMich\source\repos\ProjectService\LevelEntities\obj\Debug\netstandard2.0\LevelEntities.pdb
+C:\Users\JMich\source\repos\ProjectService\LevelEntities\obj\Debug\netstandard2.0\LevelEntities.csproj.AssemblyReference.cache
