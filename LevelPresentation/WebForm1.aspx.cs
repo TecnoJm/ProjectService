@@ -26,7 +26,7 @@ namespace LevelPresentation
             if(objUser != null)
             {
                 Response.Write("<script>alert('Welcome!')</script>");
-                Response.Redirect("GeneralPanel.aspx");
+                Response.Redirect("frmGeneralPanel.aspx");
             }
             else
             {

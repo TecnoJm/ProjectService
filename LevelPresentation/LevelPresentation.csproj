@@ -226,7 +226,8 @@
     <Content Include="css\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="fonts\fontawesome-webfonts.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="GeneralPanel.aspx" />
+    <Content Include="frmCustomer.aspx" />
+    <Content Include="frmGeneralPanel.aspx" />
     <Content Include="img\ajax-loader.gif" />
     <Content Include="img\ajax-loader1.gif" />
     <Content Include="img\avatar.png" />
@@ -395,12 +396,19 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GeneralPanel.aspx.cs">
-      <DependentUpon>GeneralPanel.aspx</DependentUpon>
+    <Compile Include="frmCustomer.aspx.cs">
+      <DependentUpon>frmCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GeneralPanel.aspx.designer.cs">
-      <DependentUpon>GeneralPanel.aspx</DependentUpon>
+    <Compile Include="frmCustomer.aspx.designer.cs">
+      <DependentUpon>frmCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmGeneralPanel.aspx.cs">
+      <DependentUpon>frmGeneralPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmGeneralPanel.aspx.designer.cs">
+      <DependentUpon>frmGeneralPanel.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.Master.cs">
       <DependentUpon>Home.Master</DependentUpon>

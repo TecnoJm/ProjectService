@@ -136,7 +136,7 @@
                 </div>
                 <ul class="sidebar-menu">
                     <li class="active">
-                        <a href="#">
+                        <a href="frmGeneralPanel.aspx">
                             <i class="fa fa-dashboard"></i>
                             <span>General Panel</span>
                         </a>
@@ -148,7 +148,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="frmCustomer.aspx">
                             <i class="fa fa-th"></i>
                             <span>Customer Page</span>
                         </a>
@@ -156,7 +156,7 @@
                 </ul>
             </section>
         </aside>
-            <aside class="right-side">
+         <aside class="right-side">
         <section class="content-header">
             <h1>
             <asp:Label ID="lblOption" runat="server" Text="General Panel"></asp:Label>
@@ -169,11 +169,12 @@
                  <!-- Design of Master Page -->
              </asp:ContentPlaceHolder>
            </div>
-    </form>
-        </section>
+          </form>
+       </section>
     </aside>
-    </div>
-    <!-- END WRAPPER-->
+      </div> <!-- FIN DEL WRAPPER -->
+
+
 </body>
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
