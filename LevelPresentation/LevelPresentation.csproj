@@ -228,6 +228,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="frmCustomer.aspx" />
     <Content Include="frmGeneralPanel.aspx" />
+    <Content Include="frmOilServiceaspx.aspx" />
     <Content Include="img\ajax-loader.gif" />
     <Content Include="img\ajax-loader1.gif" />
     <Content Include="img\avatar.png" />
@@ -261,6 +262,7 @@
     <Content Include="js\AdminLTE\dashboard.js" />
     <Content Include="js\AdminLTE\demo.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\customer.js" />
     <Content Include="js\horariosmedico.js" />
     <Content Include="js\jquery-3.1.0.min.js" />
     <Content Include="js\jquery-ui.min.js" />
@@ -409,6 +411,13 @@
     </Compile>
     <Compile Include="frmGeneralPanel.aspx.designer.cs">
       <DependentUpon>frmGeneralPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmOilServiceaspx.aspx.cs">
+      <DependentUpon>frmOilServiceaspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmOilServiceaspx.aspx.designer.cs">
+      <DependentUpon>frmOilServiceaspx.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.Master.cs">
       <DependentUpon>Home.Master</DependentUpon>

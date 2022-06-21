@@ -18,6 +18,8 @@ function addRow() {
     }
 }
 
+/*
+
 function addRowDT(data) {
     var tabla = $("#tbl_customers").DataTable();
     for (var i = 0; i < data.length; i++) {
@@ -47,3 +49,4 @@ function sendDataAjax() {
 }
 
 //Calling to SendDataAjax Function Javacsript
+sendDataAjax(); */

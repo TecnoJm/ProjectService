@@ -10,3 +10,4 @@ C:\Users\JMich\source\repos\ProjectService\LevelDatabase\obj\Debug\netstandard2.
 C:\Users\JMich\source\repos\ProjectService\LevelDatabase\bin\Debug\netstandard2.0\LevelEntities.dll
 C:\Users\JMich\source\repos\ProjectService\LevelDatabase\bin\Debug\netstandard2.0\LevelEntities.pdb
 C:\Users\JMich\source\repos\ProjectService\LevelDatabase\obj\Debug\netstandard2.0\LevelDatabase.csproj.AssemblyReference.cache
+C:\Users\JMich\source\repos\ProjectService\LevelDatabase\obj\Debug\netstandard2.0\LevelDatabase.csproj.CopyComplete
