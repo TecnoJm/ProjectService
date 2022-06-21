@@ -8,7 +8,7 @@
     <section class="content">
         <!-- Row of CUSTOMER REGISTRATION -->
         <div class="row"> 
-            <div class="col-md-6">
+            <div class="center">
                 <div class="box box-primary">
                     <div class="box-body">
                         <div class="form-group">
@@ -39,5 +39,19 @@
                 </div>
              </div>
         </div>
-          </section>
+        <div align="center">
+            <table>
+                <tr>
+                    <td>
+                        <asp:Button ID="btnRecord" runat="server" CssClass="btn btn-primary" Width="200px" Text="Record" OnClick="btnRecord_Click" />
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                        <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-danger" Width="200px" Text="Cancel" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br />
+    </section>
 </asp:Content>

@@ -9,7 +9,7 @@ namespace LevelEntities
         public int ID { get; set; }
         public String CustomerName { get; set; }
         public String Phone { get; set; }
-        public String Emial { get; set; }
+        public String Email { get; set; }
 
         public Customer() { }
 
@@ -18,7 +18,7 @@ namespace LevelEntities
             this.ID = ID;
             this.CustomerName = CustomerName;
             this.Phone = Phone;
-            this.Emial = Email;
+            this.Email = Email;
         }
     }
 }
