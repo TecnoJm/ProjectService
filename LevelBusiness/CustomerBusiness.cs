@@ -35,5 +35,19 @@ namespace LevelBusiness
                 throw ex;
             }
         }
+
+        //##################################################################//
+
+        public List<Customer> ListCustomer()
+        {
+            try
+            {
+                return CustomerBusiness.getInstance().ListCustomer();
+            } 
+            catch(Exception ex) 
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace LevelDatabase
                 rCustomer = new CustomerRegistration();
 
             }
-                return rCustomer;
+            return rCustomer;
         }
         #endregion
 
@@ -57,5 +57,47 @@ namespace LevelDatabase
             return response;
         }
 
+        //##################################################################//
+
+        public List<Customer> ListCustomer()
+        {
+            List<Customer> Lista = new List<Customer>();
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+
+            try
+            {
+                con = DBConnection.GetInstance().ConnectionDB();
+                cmd = new SqlCommand("spListCustomer", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    // Creating objects of Customer Type
+                    Customer objCustomer = new Customer();
+                    objCustomer.ID = Convert.ToInt32(dr["ID"].ToString());
+                    objCustomer.CustomerName = dr["Customer"].ToString();
+                    objCustomer.Phone = dr["Phone"].ToString();
+                    objCustomer.Email = dr["Email"].ToString();                  
+
+                    // Addind objects to the List
+                    Lista.Add(objCustomer);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return Lista;
+        }
     }
 }

@@ -19,6 +19,8 @@ namespace LevelPresentation
             }
         }
 
+        //##################################################################//
+
         //Customer Values of the Customer.cs in Level Entities
         private Customer GetValues()
         {
@@ -30,6 +32,8 @@ namespace LevelPresentation
 
             return objCustomer;
         }
+
+        //##################################################################//
 
         protected void btnRecord_Click(object sender, EventArgs e)
         {
