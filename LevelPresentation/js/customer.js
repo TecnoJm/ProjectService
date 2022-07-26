@@ -1,12 +1,12 @@
 ﻿function templateRow() {
     var template = "<tr>";
-    template += ("<td>" + "" + "</td>");
-    template += ("<td>" + "" + "</td>");
-    template += ("<td>" + "" + "</td>");
-    template += ("<td>" + "" + "</td>");
-    template += ("<td>" + "" + "</td>");
-    template += ("<td>" + "" + "</td>");
-    template += ("<td>" + "" + "</td>");
+    template += ("<td>" + "123" + "</td>");
+    template += ("<td>" + "Jorge Junior" + "</td>");
+    template += ("<td>" + "Rodriguez Castillo" + "</td>");
+    template += ("<td>" + "123" + "</td>");
+    template += ("<td>" + "123" + "</td>");
+    template += ("<td>" + "123" + "</td>");
+    template += ("<td>" + "123" + "</td>");
     template += "</tr>";
     return template;
 }
@@ -18,7 +18,6 @@ function addRow() {
     }
 }
 
-/*
 
 function addRowDT(data) {
     var tabla = $("#tbl_customers").DataTable();
@@ -35,13 +34,14 @@ function addRowDT(data) {
 function sendDataAjax() {
     $.ajax({
         type: "POST",
-        url: "frmCustomer.aspx/ListCustomer",
+        url: "frmListCustomer.aspx/ListCustomer",
         data: {},
         contentType: 'application/json; charset=utf-8',
         error: function (xhr, ajaxOptions, thrownError) {
             console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
         },
         success: function (data) {
+            addRow();
             console.log(data);
             //addRowDT(data.d);
         }
@@ -49,4 +49,4 @@ function sendDataAjax() {
 }
 
 //Calling to SendDataAjax Function Javacsript
-sendDataAjax(); */
+//sendDataAjax(); 

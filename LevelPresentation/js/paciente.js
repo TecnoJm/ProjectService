@@ -41,9 +41,11 @@ function sendDataAjax() {
         },
         success: function (data) {
             console.log(data);
+            addRow();
             //addRowDT(data.d);
         }
     });
 }
 
 //Calling to SendDataAjax Function Javacsript
+sendDataAjax();

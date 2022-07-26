@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using LevelEntities;
 using LevelBusiness;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
 
 namespace LevelPresentation
 {
@@ -51,6 +49,24 @@ namespace LevelPresentation
                 txtMiles.Text = null;
                 txtOilType.Text = null;
                 txtDate.Text = null;
+
+                //Send Email of Confirmation //Pendiente
+                using (MailMessage mail = new MailMessage())
+                {
+                    mail.From = new MailAddress("jmichael1802@hotmail.com");
+                    mail.To.Add("megajm701@gmail.com");
+                    mail.Subject = "Hello World";
+                    mail.Body = "Test 1";
+                    mail.IsBodyHtml = true;
+
+                    using (SmtpClient smtp = new SmtpClient("smtp.live.com", 587))
+                    {
+                        smtp.EnableSsl = true;
+                        smtp.UseDefaultCredentials = false;
+                        smtp.Credentials = new NetworkCredential("jmichael1802@hotmail.com", "$uperD@nlo86;.");
+                        smtp.Send(mail);
+                    }
+                }
             }
             else
             {
@@ -61,6 +77,15 @@ namespace LevelPresentation
                 txtOilType.Text = null;
                 txtDate.Text = null;
             }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtCustomerID.Text = null;
+            txtGrade.Text = null;
+            txtMiles.Text = null;
+            txtOilType.Text = null;
+            txtDate.Text = null;
         }
     }
 }

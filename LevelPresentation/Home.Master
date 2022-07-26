@@ -157,6 +157,12 @@
                             <span>Customer Page</span>
                         </a>
                     </li>
+                     <li>
+                        <a href="frmListCustomer.aspx">
+                            <i class="fa fa-th"></i>
+                            <span>List Customer Page</span>
+                        </a>
+                    </li>
                 </ul>
             </section>
         </aside>

@@ -12,4 +12,3 @@ C:\Users\JMich\source\repos\ProjectService\LevelBusiness\bin\Debug\netstandard2.
 C:\Users\JMich\source\repos\ProjectService\LevelBusiness\bin\Debug\netstandard2.0\LevelEntities.dll
 C:\Users\JMich\source\repos\ProjectService\LevelBusiness\bin\Debug\netstandard2.0\LevelDatabase.pdb
 C:\Users\JMich\source\repos\ProjectService\LevelBusiness\bin\Debug\netstandard2.0\LevelEntities.pdb
-C:\Users\JMich\source\repos\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.csproj.CopyComplete

@@ -77,5 +77,12 @@ namespace LevelPresentation
                 txtEmail.Text = null;
             }
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtName.Text = null;
+            txtPhone.Text = null;
+            txtEmail.Text = null;
+        }
     }
 }
