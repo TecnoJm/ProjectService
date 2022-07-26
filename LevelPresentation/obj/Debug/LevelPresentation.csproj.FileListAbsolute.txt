@@ -64,3 +64,4 @@ C:\Users\JMich\source\repos\ProjectService\LevelPresentation\bin\System.Data.Sql
 C:\Users\JMich\source\repos\ProjectService\LevelPresentation\bin\System.Data.SqlClient.xml
 C:\Users\JMich\source\repos\ProjectService\LevelPresentation\bin\LevelDatabase.dll
 C:\Users\JMich\source\repos\ProjectService\LevelPresentation\bin\LevelDatabase.pdb
+C:\Users\JMich\source\repos\ProjectService\LevelPresentation\obj\Debug\LevelPresentation.csproj.CopyComplete

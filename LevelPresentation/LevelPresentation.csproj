@@ -228,6 +228,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="frmCustomer.aspx" />
     <Content Include="frmGeneralPanel.aspx" />
+    <Content Include="frmListCustomer.aspx" />
     <Content Include="frmOilServiceaspx.aspx" />
     <Content Include="img\ajax-loader.gif" />
     <Content Include="img\ajax-loader1.gif" />
@@ -411,6 +412,13 @@
     </Compile>
     <Compile Include="frmGeneralPanel.aspx.designer.cs">
       <DependentUpon>frmGeneralPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmListCustomer.aspx.cs">
+      <DependentUpon>frmListCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmListCustomer.aspx.designer.cs">
+      <DependentUpon>frmListCustomer.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmOilServiceaspx.aspx.cs">
       <DependentUpon>frmOilServiceaspx.aspx</DependentUpon>

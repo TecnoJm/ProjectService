@@ -60,14 +60,21 @@ namespace LevelPresentation
 
             Customer objCustomer = GetValues();
             //Send the information to Level Business
-            bool response = CustomerBusiness.getInstance().RecordCustomer(objCustomer);
-            if (response == true)
+            bool response = false;
+            if (txtName.Text != "" && txtEmail.Text != "" && txtPhone.Text != "")
             {
+                response = CustomerBusiness.getInstance().RecordCustomer(objCustomer);
                 Response.Write("<script>alert('Customer Added!')</script>");
+                txtName.Text = null;
+                txtPhone.Text = null;
+                txtEmail.Text = null;
             }
             else
             {
                 Response.Write("<script>alert('Customer Information Incorrect!')</script>");
+                txtName.Text = null;
+                txtPhone.Text = null;
+                txtEmail.Text = null;
             }
         }
     }

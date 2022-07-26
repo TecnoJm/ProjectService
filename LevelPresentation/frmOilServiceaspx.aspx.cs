@@ -22,8 +22,7 @@ namespace LevelPresentation
         private OilService GetValues()
         {
             OilService objOilService = new OilService();
-            objOilService.ID = 0;
-            objOilService.CustomerID = 0;
+            objOilService.CustomerID = Convert.ToInt32(txtCustomerID.Text);
             objOilService.Customer = "Carlos";
             objOilService.Grade = txtGrade.Text;
             objOilService.Miles = Convert.ToInt32(txtMiles.Text);
@@ -41,14 +40,26 @@ namespace LevelPresentation
 
             OilService objOilService = GetValues();
             //Send the information to Level Business
-            bool response = OilServiceBusiness.getInstance().RecordOilService(objOilService);
-            if (response == true)
+            bool response = false;
+            if (txtCustomerID.Text != "" && txtGrade.Text != "" && txtMiles.Text != "" && txtOilType.Text != ""
+                && txtDate.Text != "")
             {
+                response = OilServiceBusiness.getInstance().RecordOilService(objOilService);
                 Response.Write("<script>alert('Oil Service Added!')</script>");
+                txtCustomerID.Text = null;
+                txtGrade.Text = null;
+                txtMiles.Text = null;
+                txtOilType.Text = null;
+                txtDate.Text = null;
             }
             else
             {
                 Response.Write("<script>alert('Oil Service Information Incorrect!')</script>");
+                txtCustomerID.Text = null;
+                txtGrade.Text = null;
+                txtMiles.Text = null;
+                txtOilType.Text = null;
+                txtDate.Text = null;
             }
         }
     }
