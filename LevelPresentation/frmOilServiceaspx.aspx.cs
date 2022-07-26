@@ -50,24 +50,26 @@ namespace LevelPresentation
                 txtOilType.Text = null;
                 txtDate.Text = null;
 
-                //Send Email of Confirmation //Pendiente
-                using (MailMessage mail = new MailMessage())
+                //Send Email of Confirmation 
+
+                //I need to find a method to send the emails even without professional approval.
+                /*using (MailMessage mail = new MailMessage())
                 {
-                    mail.From = new MailAddress("jmichael1802@hotmail.com");
-                    mail.To.Add("megajm701@gmail.com");
+                    mail.From = new MailAddress("Check");
+                    mail.To.Add("Check");
                     mail.Subject = "Hello World";
                     mail.Body = "Test 1";
                     mail.IsBodyHtml = true;
 
-                    using (SmtpClient smtp = new SmtpClient("smtp.live.com", 587))
+                    using (SmtpClient smtp = new SmtpClient("smtp.live.com", 465))
                     {
                         smtp.EnableSsl = true;
                         smtp.UseDefaultCredentials = false;
-                        smtp.Credentials = new NetworkCredential("jmichael1802@hotmail.com", "$uperD@nlo86;.");
+                        smtp.Credentials = new NetworkCredential("Check", "Check");
                         smtp.Send(mail);
                     }
-                }
-            }
+                } */
+            } 
             else
             {
                 Response.Write("<script>alert('Oil Service Information Incorrect!')</script>");
