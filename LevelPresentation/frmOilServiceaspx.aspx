@@ -33,7 +33,12 @@
                             <label>OIL TYPE</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtOilType" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                           <!-- <asp:TextBox ID="txtOilType" runat="server" Text="" CssClass="form-control"></asp:TextBox> -->
+
+                            <asp:DropDownList CssClass="form-control" id="ddlOilType" runat="server"> 
+                             <asp:ListItem Value="Standard"> Standard </asp:ListItem>
+                             <asp:ListItem Value="Synthetic"> Synthetic </asp:ListItem>
+                            </asp:DropDownList>
                         </div>
                         <div class="form-group">
                             <label>DATE</label>

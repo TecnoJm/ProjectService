@@ -24,7 +24,7 @@ namespace LevelPresentation
             objOilService.Customer = "Carlos";
             objOilService.Grade = txtGrade.Text;
             objOilService.Miles = Convert.ToInt32(txtMiles.Text);
-            objOilService.OilType = txtOilType.Text;
+            objOilService.OilType = ddlOilType.SelectedItem.Text;
             objOilService.Date = txtDate.Text;
 
             return objOilService;
@@ -39,8 +39,7 @@ namespace LevelPresentation
             OilService objOilService = GetValues();
             //Send the information to Level Business
             bool response = false;
-            if (txtCustomerID.Text != "" && txtGrade.Text != "" && txtMiles.Text != "" && txtOilType.Text != ""
-                && txtDate.Text != "")
+            if (txtCustomerID.Text != "" && txtGrade.Text != "" && txtMiles.Text != "" && txtDate.Text != "")
             {
                 response = OilServiceBusiness.getInstance().RecordOilService(objOilService);
                 Response.Write("<script>alert('Oil Service Added!')</script>");
