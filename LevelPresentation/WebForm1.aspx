@@ -11,7 +11,7 @@
 </head>
 <body class="bg-black">
     <div class="form-box" id="login-box">
-       <div class="header">Log In</div>
+       <div class="header bg-red">Log In</div>
     <form id="form1" runat="server">
         <div class="body bg-gray">
             <div class="form-group">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="footer">
-            <asp:Button ID="btnLogIn" CssClass="btn bg-olive btn-block" runat="server" Text="Log In" OnClick="btnLogIn_Click" />
+            <asp:Button ID="btnLogIn" CssClass="btn bg-red btn-block" runat="server" Text="Log In" OnClick="btnLogIn_Click" />
         </div>
     </form>
    </div>

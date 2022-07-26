@@ -26,11 +26,17 @@ namespace LevelPresentation
             if(objUser != null)
             {
                 Response.Write("<script>alert('Welcome!')</script>");
+
+                txtUser.Text = null;
+                txtPassword.Text = null;
+
                 Response.Redirect("frmGeneralPanel.aspx");
             }
             else
             {
                 Response.Write("<script>alert('Wrong user')</script>");
+                txtUser.Text = null;
+                txtPassword.Text = null;
             }
         }
     }
