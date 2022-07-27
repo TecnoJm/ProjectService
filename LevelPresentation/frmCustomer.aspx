@@ -37,11 +37,11 @@
             <table>
                 <tr>
                     <td>
-                        <asp:Button ID="btnRecord" runat="server" CssClass="btn btn-primary" Width="200px" Text="Record" OnClick="btnRecord_Click" />
+                        <asp:Button ID="btnRecord" runat="server" CssClass="btn btn-primary" BackColor="Red" Width="200px" Text="Record" OnClick="btnRecord_Click" />
                     </td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>
-                        <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-danger" Width="200px" Text="Cancel" OnClick="btnCancel_Click" />
+                        <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-danger" BackColor="Red" Width="200px" Text="Cancel" OnClick="btnCancel_Click" />
                     </td>
                 </tr>
             </table>

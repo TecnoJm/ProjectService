@@ -11,7 +11,9 @@ namespace LevelPresentation
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //Take the Client PC date.
+            txtDate.Text = DateTime.Now.ToString();
+            txtDate.Enabled = false;
         }
 
         //##################################################################//
@@ -25,6 +27,9 @@ namespace LevelPresentation
             objOilService.Grade = txtGrade.Text;
             objOilService.Miles = Convert.ToInt32(txtMiles.Text);
             objOilService.OilType = ddlOilType.SelectedItem.Text;
+
+            //Take the Client PC date in real time.
+            txtDate.Text = DateTime.Now.ToString();
             objOilService.Date = txtDate.Text;
 
             return objOilService;
@@ -47,7 +52,7 @@ namespace LevelPresentation
                 txtGrade.Text = null;
                 txtMiles.Text = null;
                 txtOilType.Text = null;
-                txtDate.Text = null;
+
 
                 //Send Email of Confirmation 
 
@@ -76,7 +81,6 @@ namespace LevelPresentation
                 txtGrade.Text = null;
                 txtMiles.Text = null;
                 txtOilType.Text = null;
-                txtDate.Text = null;
             }
         }
 
@@ -86,7 +90,6 @@ namespace LevelPresentation
             txtGrade.Text = null;
             txtMiles.Text = null;
             txtOilType.Text = null;
-            txtDate.Text = null;
         }
     }
 }

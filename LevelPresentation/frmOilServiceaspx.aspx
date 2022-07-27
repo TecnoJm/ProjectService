@@ -44,7 +44,7 @@
                             <label>DATE</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtDate" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox  ID="txtDate" runat="server" Text='<%# String.Format("{0:MM-dd-yyyy}", Eval("JoinDate")) %>' CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -55,11 +55,11 @@
             <table>
                 <tr>
                     <td>
-                        <asp:Button ID="btnRecord" runat="server" CssClass="btn btn-primary" Width="200px" Text="Record" OnClick="btnRecord_Click" />
+                        <asp:Button ID="btnRecord" runat="server" CssClass="btn btn-primary" BackColor="Red" Width="200px" Text="Record" OnClick="btnRecord_Click" />
                     </td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>
-                        <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-danger" Width="200px" Text="Cancel" OnClick="btnCancel_Click" />
+                        <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-danger" BackColor="Red" Width="200px" Text="Cancel" OnClick="btnCancel_Click" />
                     </td>
                 </tr>
             </table>
