@@ -38,7 +38,8 @@ namespace LevelBusiness
 
         //##################################################################//
 
-        public List<Customer> ListCustomer()
+        //Instance for List Customer (Pendient)
+        /*public List<Customer> ListCustomer()
         {
             try
             {
@@ -48,6 +49,6 @@ namespace LevelBusiness
             {
                 throw ex;
             }
-        }
+        }*/
     }
 }

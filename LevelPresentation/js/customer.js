@@ -41,12 +41,12 @@ function sendDataAjax() {
             console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
         },
         success: function (data) {
-            addRow();
-            console.log(data);
-            //addRowDT(data.d);
+            //addRow();
+            console.log(data.d);
+            addRowDT(data.d);
         }
     });
 }
 
 //Calling to SendDataAjax Function Javacsript
-//sendDataAjax(); 
+sendDataAjax(); 

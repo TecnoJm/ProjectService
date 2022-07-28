@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LevelEntities;
+using LevelBusiness;
+using System.Web.Services;
 
 namespace LevelPresentation
 {
@@ -13,5 +16,21 @@ namespace LevelPresentation
         {
 
         }
+
+        /*[WebMethod]
+        public static List<Customer> ListCustomer()
+        {
+            List<Customer> Lista = null;
+            try
+            {
+                Lista = CustomerBusiness.getInstance().ListCustomer();
+            }
+            catch (Exception ex)
+            {
+                Lista = null;
+            }
+
+            return Lista;
+        }*/
     }
 }

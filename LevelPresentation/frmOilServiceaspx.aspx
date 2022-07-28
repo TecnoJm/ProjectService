@@ -15,7 +15,13 @@
                             <label>CUSTOMER ID</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtCustomerID" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtCustomerID" runat="server" Text="" CssClass="form-control" OnTextChanged="txtCustomerID_TextChanged" AutoPostBack="True"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label>CUSTOMER NAME</label>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="txtCustomerName" runat="server" Text="" CssClass="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>GRADE</label>

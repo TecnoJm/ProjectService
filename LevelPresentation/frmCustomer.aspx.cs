@@ -22,24 +22,6 @@ namespace LevelPresentation
 
         //##################################################################//
 
-        [WebMethod]
-        public static List<Customer> ListCustomer()
-        {
-            List<Customer> Lista = null;
-            try
-            {
-                Lista = CustomerBusiness.getInstance().ListCustomer();
-            }
-            catch(Exception ex)
-            {
-                Lista = null;
-            }
-
-            return Lista;
-        }
-
-        //##################################################################//
-
         //Customer Values of the Customer.cs in Level Entities
         private Customer GetValues()
         {

@@ -4,6 +4,9 @@ using LevelBusiness;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace LevelPresentation
 {
@@ -23,7 +26,7 @@ namespace LevelPresentation
         {
             OilService objOilService = new OilService();
             objOilService.CustomerID = Convert.ToInt32(txtCustomerID.Text);
-            objOilService.Customer = "Carlos";
+            objOilService.Customer = txtCustomerName.Text;
             objOilService.Grade = txtGrade.Text;
             objOilService.Miles = Convert.ToInt32(txtMiles.Text);
             objOilService.OilType = ddlOilType.SelectedItem.Text;
@@ -57,27 +60,35 @@ namespace LevelPresentation
                 //Send Email of Confirmation 
 
                 //I need to find a method to send the emails even without professional approval.
-                /*using (MailMessage mail = new MailMessage())
-                {
-                    mail.From = new MailAddress("Check");
-                    mail.To.Add("Check");
-                    mail.Subject = "Hello World";
-                    mail.Body = "Test 1";
-                    mail.IsBodyHtml = true;
 
-                    using (SmtpClient smtp = new SmtpClient("smtp.live.com", 465))
-                    {
-                        smtp.EnableSsl = true;
-                        smtp.UseDefaultCredentials = false;
-                        smtp.Credentials = new NetworkCredential("Check", "Check");
-                        smtp.Send(mail);
-                    }
+                /*MailAddress to = new MailAddress("Receptor");
+                MailAddress from = new MailAddress("Transmitter");
+
+                MailMessage message = new MailMessage(from, to);
+                message.Subject = "Hi!, Jean";
+                message.Body = "This is a just test for Email code.";
+
+                SmtpClient client = new SmtpClient("smtp.live.com", 465) //465 //587
+                {
+                    Credentials = new NetworkCredential("user", "pass"),
+                    EnableSsl = true
+                };
+                // code in brackets above needed if authentication required
+
+                try
+                {
+                    client.Send(message);
+                }
+                catch (SmtpException ex)
+                {
+                    throw ex;
                 } */
             } 
             else
             {
                 Response.Write("<script>alert('Oil Service Information Incorrect!')</script>");
                 txtCustomerID.Text = null;
+                txtCustomerName.Text = null;
                 txtGrade.Text = null;
                 txtMiles.Text = null;
                 txtOilType.Text = null;
@@ -87,9 +98,38 @@ namespace LevelPresentation
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             txtCustomerID.Text = null;
+            txtCustomerName.Text = null;
             txtGrade.Text = null;
             txtMiles.Text = null;
             txtOilType.Text = null;
+        }
+
+        protected void txtCustomerID_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //Search Customer from Customers table.
+                //I need to put this method in a Stored Procedured.
+                string ConnectionString;
+                ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=LocalServiceProjectDB;Integrated Security=True";
+
+                SqlConnection conn = new SqlConnection(ConnectionString);
+
+                SqlDataAdapter da = new SqlDataAdapter("Select ID, Customer from dbo.Customers where ID = " + txtCustomerID.Text, conn); DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                txtCustomerName.Text = dt.Rows[0][1].ToString();
+            }
+            catch(Exception)
+            {
+                Response.Write("<script>alert('This Customer dont exits!, You need the add it in the Database in Customer Page.')</script>");
+                txtCustomerID.Text = null;
+                txtCustomerName.Text = null;
+                txtGrade.Text = null;
+                txtMiles.Text = null;
+                txtOilType.Text = null;
+            }
         }
     }
 }
