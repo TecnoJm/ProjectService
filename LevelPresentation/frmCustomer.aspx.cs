@@ -22,11 +22,20 @@ namespace LevelPresentation
 
         //##################################################################//
 
+        public void ClearTextBox()
+        {
+            txtPlate.Text = null;
+            txtName.Text = null;
+            txtPhone.Text = null;
+            txtEmail.Text = null;
+        }
+
         //Customer Values of the Customer.cs in Level Entities
         private Customer GetValues()
         {
             Customer objCustomer = new Customer();
             objCustomer.ID = 0;
+            objCustomer.Plate = txtPlate.Text;
             objCustomer.CustomerName = txtName.Text;
             objCustomer.Phone = txtPhone.Text;
             objCustomer.Email = txtEmail.Text;
@@ -47,24 +56,18 @@ namespace LevelPresentation
             {
                 response = CustomerBusiness.getInstance().RecordCustomer(objCustomer);
                 Response.Write("<script>alert('Customer Added!')</script>");
-                txtName.Text = null;
-                txtPhone.Text = null;
-                txtEmail.Text = null;
+                ClearTextBox();
             }
             else
             {
                 Response.Write("<script>alert('Customer Information Incorrect!')</script>");
-                txtName.Text = null;
-                txtPhone.Text = null;
-                txtEmail.Text = null;
+                ClearTextBox();
             }
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            txtName.Text = null;
-            txtPhone.Text = null;
-            txtEmail.Text = null;
+           ClearTextBox();
         }
     }
 }

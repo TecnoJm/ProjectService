@@ -36,6 +36,7 @@ namespace LevelDatabase
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@prmPlate", objCustomer.Plate);
                 cmd.Parameters.AddWithValue("@prmCustomerName", objCustomer.CustomerName);
                 cmd.Parameters.AddWithValue("@prmPhone", objCustomer.Phone);
                 cmd.Parameters.AddWithValue("@prmEmail", objCustomer.Email);
@@ -79,7 +80,8 @@ namespace LevelDatabase
                     // Creating objects of Customer Type
                     Customer objCustomer = new Customer();
                     objCustomer.ID = Convert.ToInt32(dr["ID"].ToString());
-                    objCustomer.CustomerName = dr["Customer"].ToString();
+                    objCustomer.CustomerName = dr["Plate"].ToString();
+                    objCustomer.CustomerName = dr["Name"].ToString();
                     objCustomer.Phone = dr["Phone"].ToString();
                     objCustomer.Email = dr["Email"].ToString();                  
 

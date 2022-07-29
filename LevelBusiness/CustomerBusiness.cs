@@ -38,17 +38,16 @@ namespace LevelBusiness
 
         //##################################################################//
 
-        //Instance for List Customer (Pendient)
-        /*public List<Customer> ListCustomer()
+        public List<Customer> ListCustomer()
         {
             try
             {
-                return CustomerBusiness.getInstance().ListCustomer();
+                return CustomerRegistration.getInstance().ListCustomer();
             } 
             catch(Exception ex) 
             {
                 throw ex;
             }
-        }*/
+        }
     }
 }

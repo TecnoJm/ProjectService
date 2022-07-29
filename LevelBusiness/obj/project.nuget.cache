@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a9AQu8jVtwS+G7LXvOHSS3c7pI+GVpxjLyyqt5/o0NLei/Lf91kGc0ettIzDgC9njJg7iPwBrGCd3qQF0q4Tyg==",
+  "dgSpecHash": "bI59ciHFm+iTw5tcAaQCAdSOSDTUPgB5ew3qyXKLifZ36oy0shFTYYLZLe7qeRavshJaDGTiWCPowzwyvU8/sQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JMich\\source\\repos\\ProjectService\\LevelBusiness\\LevelBusiness.csproj",
+  "projectFilePath": "C:\\Users\\JMich\\source\\repos\\OilService Project\\ProjectService\\LevelBusiness\\LevelBusiness.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JMich\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\JMich\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

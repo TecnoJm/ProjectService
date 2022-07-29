@@ -17,7 +17,7 @@ namespace LevelPresentation
 
         }
 
-        /*[WebMethod]
+        [WebMethod]
         public static List<Customer> ListCustomer()
         {
             List<Customer> Lista = null;
@@ -31,6 +31,6 @@ namespace LevelPresentation
             }
 
             return Lista;
-        }*/
+        }
     }
 }

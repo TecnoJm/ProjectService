@@ -12,6 +12,11 @@
                 <div class="box box-primary">
                     <div class="box-body">
                         <div class="form-group">
+                           <label>PLATE</label>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="txtPlate" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                        </div>
                             <label>NAME</label>
                         </div>
                         <div class="form-group">
