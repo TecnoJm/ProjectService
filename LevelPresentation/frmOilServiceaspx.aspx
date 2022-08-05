@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="frmOilServiceaspx.aspx.cs" Inherits="LevelPresentation.frmOilServiceaspx" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" Async="true" AutoEventWireup="true" CodeBehind="frmOilServiceaspx.aspx.cs" Inherits="LevelPresentation.frmOilServiceaspx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -47,7 +47,7 @@
                         <div class="form-group">
                            <!-- <asp:TextBox ID="txtOilType" runat="server" Text="" CssClass="form-control"></asp:TextBox> -->
 
-                            <asp:DropDownList CssClass="form-control" id="ddlOilType" runat="server"> 
+                            <asp:DropDownList CssClass="form-control" id="ddlOilType" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlOilType_SelectedIndexChanged"> 
                              <asp:ListItem Value="Standard"> Standard </asp:ListItem>
                              <asp:ListItem Value="Synthetic"> Synthetic </asp:ListItem>
                             </asp:DropDownList>
@@ -56,7 +56,7 @@
                             <label>NEXT CHANGE DATE</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox  ID="txtDate" runat="server" Text="" placeholder="yyyy/mm/dd" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox  ID="txtDate" runat="server" Text="" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                 </div>

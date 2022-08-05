@@ -18,16 +18,16 @@ function addRow() {
     }
 }
 
-
+//Add data to DataTable tbl_Customers
 function addRowDT(data) {
     var tabla = $("#tbl_customers").DataTable();
     for (var i = 0; i < data.length; i++) {
         tabla.fnAddData([
             data[i].ID,
             data[i].Plate,
-            data[i].Customer,
+            data[i].CustomerName,
             data[i].Phone,
-            data[i].Email,
+            data[i].Email
         ]);
     }
 }

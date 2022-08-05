@@ -17,15 +17,15 @@
                         <table id="tbl_customers" class="table table-bordered table-hover text-center">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>Code</th>
                                     <th>Plate</th>
-                                    <th>Customer Name</th>
-                                    <th>Phone</th>
-                                    <th>Email</th>
+                                    <th>`Customer Name</th>
+                                    <th>`Phone</th>
+                                    <th>`Email</th>
                                 </tr>
                             </thead>
                             <tbody id="tbl_body_table">
-                                <!-- DATA POR MEDIO DE AJAX-->
+                                <!-- DATA FROM AJAX JAVASCRIPT -->
                             </tbody>
                         </table>
                     </div>
@@ -33,6 +33,5 @@
             </div>
         </div>
         <!-- End Datatable -->
-
     </section>
 </asp:Content>

@@ -15,7 +15,6 @@ namespace LevelPresentation
         protected void Page_Load(object sender, EventArgs e)
         {
             //Take the Client PC date.
-            txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             txtDate.Enabled = false;
             txtCustomerName.Enabled = false;
             txtCustomerPhone.Enabled = false;
@@ -48,8 +47,7 @@ namespace LevelPresentation
             objOilService.OilType = ddlOilType.SelectedItem.Text;
 
             //Take the Client PC date in real time.
-            txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            objOilService.TodayDate = txtDate.Text;
+            objOilService.TodayDate = DateTime.Now.ToString();
             objOilService.ChangeDate = txtDate.Text;
 
             return objOilService;
@@ -100,7 +98,7 @@ namespace LevelPresentation
 
                 SqlConnection conn = new SqlConnection(ConnectionString);
 
-                SqlDataAdapter da = new SqlDataAdapter("Select ID, Name, Phone from dbo.Customer where Plate = '" + txtCustomerID.Text + "'", conn); DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter("Select ID, CustomerName, Phone from dbo.Customer where Plate = '" + txtCustomerID.Text + "'", conn); DataTable dt = new DataTable();
 
                 da.Fill(dt);
 
@@ -112,6 +110,24 @@ namespace LevelPresentation
             {
                 Response.Write("<script>alert('This Customer dont exits!, You need the add it in the Database in Customer Page.')</script>");
                 ClearTextBox();
+            }
+        }
+
+        protected void ddlOilType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            DateTime nextMonth = DateTime.Now;
+
+            //Create new Date for Oil Service
+            if (ddlOilType.SelectedValue == "Standard")
+            {
+                DateTime newDate = nextMonth.AddMonths(3);
+                txtDate.Text = newDate.ToString("yyyy-MM-dd");
+            }
+            else if (ddlOilType.SelectedValue == "Synthetic")
+            {
+                DateTime newDate = nextMonth.AddMonths(5);
+                txtDate.Text = newDate.ToString("yyyy-MM-dd");
             }
         }
     }

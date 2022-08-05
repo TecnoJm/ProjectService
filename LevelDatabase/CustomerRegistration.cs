@@ -80,8 +80,8 @@ namespace LevelDatabase
                     // Creating objects of Customer Type
                     Customer objCustomer = new Customer();
                     objCustomer.ID = Convert.ToInt32(dr["ID"].ToString());
-                    objCustomer.CustomerName = dr["Plate"].ToString();
-                    objCustomer.CustomerName = dr["Name"].ToString();
+                    objCustomer.Plate = dr["Plate"].ToString();
+                    objCustomer.CustomerName = dr["CustomerName"].ToString();
                     objCustomer.Phone = dr["Phone"].ToString();
                     objCustomer.Email = dr["Email"].ToString();                  
 
