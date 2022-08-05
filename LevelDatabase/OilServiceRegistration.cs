@@ -39,12 +39,14 @@ namespace LevelDatabase
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 //Parameters (Data from Text Box)
-                cmd.Parameters.AddWithValue("@prmCustomerID", objOilService.CustomerID);
-                cmd.Parameters.AddWithValue("@prmCustomerName", objOilService.Customer);
+                cmd.Parameters.AddWithValue("@prmCustomerPlate", objOilService.CustomerPlate);
+                cmd.Parameters.AddWithValue("@prmCustomerName", objOilService.CustomerName);
+                cmd.Parameters.AddWithValue("@prmCustomerPhone", objOilService.CustomerPhone);
                 cmd.Parameters.AddWithValue("@prmGrade", objOilService.Grade);
                 cmd.Parameters.AddWithValue("@prmMiles", objOilService.Miles);
                 cmd.Parameters.AddWithValue("@prmOilType", objOilService.OilType);
-                cmd.Parameters.AddWithValue("@prmDate", objOilService.Date);
+                cmd.Parameters.AddWithValue("@prmTodayDate", objOilService.TodayDate);
+                cmd.Parameters.AddWithValue("@prmChangeDate", objOilService.ChangeDate);
                 con.Open();
 
                 int rows = cmd.ExecuteNonQuery();

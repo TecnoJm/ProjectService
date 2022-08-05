@@ -130,4 +130,3 @@ C:\Users\JMich\source\repos\OilService Project\ProjectService\LevelPresentation\
 C:\Users\JMich\source\repos\OilService Project\ProjectService\LevelPresentation\obj\Debug\LevelPresentation.csproj.CoreCompileInputs.cache
 C:\Users\JMich\source\repos\OilService Project\ProjectService\LevelPresentation\obj\Debug\LevelPresentation.dll
 C:\Users\JMich\source\repos\OilService Project\ProjectService\LevelPresentation\obj\Debug\LevelPresentation.pdb
-C:\Users\JMich\source\repos\OilService Project\ProjectService\LevelPresentation\obj\Debug\LevelPresentation.csproj.CopyComplete

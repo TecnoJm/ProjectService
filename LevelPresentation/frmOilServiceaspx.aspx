@@ -12,7 +12,7 @@
                 <div class="box box-primary">
                     <div class="box-body">
                         <div class="form-group">
-                            <label>CUSTOMER ID</label>
+                            <label>CAR PLATE</label>
                         </div>
                         <div class="form-group">
                             <asp:TextBox ID="txtCustomerID" runat="server" Text="" CssClass="form-control" OnTextChanged="txtCustomerID_TextChanged" AutoPostBack="True"></asp:TextBox>
@@ -22,6 +22,12 @@
                         </div>
                         <div class="form-group">
                             <asp:TextBox ID="txtCustomerName" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label>CUSTOMER PHONE</label>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="txtCustomerPhone" runat="server" Text="" CssClass="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>GRADE</label>
@@ -47,10 +53,10 @@
                             </asp:DropDownList>
                         </div>
                         <div class="form-group">
-                            <label>DATE</label>
+                            <label>NEXT CHANGE DATE</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox  ID="txtDate" runat="server" Text='<%# String.Format("{0:MM-dd-yyyy}", Eval("JoinDate")) %>' CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox  ID="txtDate" runat="server" Text="" placeholder="yyyy/mm/dd" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                 </div>

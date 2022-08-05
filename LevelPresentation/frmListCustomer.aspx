@@ -18,6 +18,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>Plate</th>
                                     <th>Customer Name</th>
                                     <th>Phone</th>
                                     <th>Email</th>

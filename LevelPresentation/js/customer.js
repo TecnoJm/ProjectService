@@ -24,9 +24,10 @@ function addRowDT(data) {
     for (var i = 0; i < data.length; i++) {
         tabla.fnAddData([
             data[i].ID,
+            data[i].Plate,
             data[i].Customer,
             data[i].Phone,
-            data[i].Email
+            data[i].Email,
         ]);
     }
 }

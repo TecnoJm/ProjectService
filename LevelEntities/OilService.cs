@@ -8,23 +8,29 @@ namespace LevelEntities
     {
             public int ID { get; set; }
             public int CustomerID { get; set; }
-            public String Customer { get; set; }
+            public String CustomerPlate { get; set; }
+            public String CustomerName { get; set; }
+            public String CustomerPhone { get; set; }
             public String Grade { get; set; }
             public int Miles { get; set; }
             public String OilType { get; set; }
-            public String Date { get; set; }
+            public String TodayDate { get; set; }
+            public String ChangeDate { get; set; }
 
-            public OilService() { }
+        public OilService() { }
 
-            public OilService(int ID, int CustomerID, String Customer, String Grade, int Miles, String OilType, String Date)
+            public OilService(int ID, int CustomerID, String CustomerPlate, String CustomerName, String CustomerPhone, String Grade, int Miles, String OilType, String TodayDate, String ChangeDate)
             {
                 this.ID = ID;
                 this.CustomerID = CustomerID;
-                this.Customer = Customer;
+                this.CustomerPlate = CustomerPlate;
+                this.CustomerName = CustomerName;
+                this.CustomerName = CustomerPhone;
                 this.Grade = Grade;
                 this.Miles = Miles;
                 this.OilType = OilType;
-                this.Date = Date;
+                this.TodayDate = TodayDate;
+                this.ChangeDate = ChangeDate;
             }
         }
     }

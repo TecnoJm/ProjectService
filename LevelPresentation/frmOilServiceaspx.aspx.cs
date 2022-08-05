@@ -15,8 +15,23 @@ namespace LevelPresentation
         protected void Page_Load(object sender, EventArgs e)
         {
             //Take the Client PC date.
-            txtDate.Text = DateTime.Now.ToString();
+            txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             txtDate.Enabled = false;
+            txtCustomerName.Enabled = false;
+            txtCustomerPhone.Enabled = false;
+        }
+
+        //##################################################################//
+
+        public void ClearTextBox()
+        {
+            txtCustomerID.Text = null;
+            txtCustomerName.Text = null;
+            txtCustomerPhone.Text = null;
+            txtGrade.Text = null;
+            txtMiles.Text = null;
+            txtOilType.Text = null;
+            txtDate.Text = null;
         }
 
         //##################################################################//
@@ -25,15 +40,17 @@ namespace LevelPresentation
         private OilService GetValues()
         {
             OilService objOilService = new OilService();
-            objOilService.CustomerID = Convert.ToInt32(txtCustomerID.Text);
-            objOilService.Customer = txtCustomerName.Text;
+            objOilService.CustomerPlate = txtCustomerID.Text;
+            objOilService.CustomerName = txtCustomerName.Text;
+            objOilService.CustomerPhone = txtCustomerPhone.Text;
             objOilService.Grade = txtGrade.Text;
             objOilService.Miles = Convert.ToInt32(txtMiles.Text);
             objOilService.OilType = ddlOilType.SelectedItem.Text;
 
             //Take the Client PC date in real time.
-            txtDate.Text = DateTime.Now.ToString();
-            objOilService.Date = txtDate.Text;
+            txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            objOilService.TodayDate = txtDate.Text;
+            objOilService.ChangeDate = txtDate.Text;
 
             return objOilService;
         }
@@ -43,67 +60,35 @@ namespace LevelPresentation
         protected void btnRecord_Click(object sender, EventArgs e)
         {
             //Oil Service Registration
-
-            OilService objOilService = GetValues();
-            //Send the information to Level Business
-            bool response = false;
-            if (txtCustomerID.Text != "" && txtGrade.Text != "" && txtMiles.Text != "" && txtDate.Text != "")
+            if (txtCustomerID.Text != "" && txtCustomerName.Text != "" && txtCustomerPhone.Text != "" && txtGrade.Text != "" && txtMiles.Text != "" && txtDate.Text != "")
             {
-                response = OilServiceBusiness.getInstance().RecordOilService(objOilService);
+                OilService objOilService = GetValues();
+               //Send the information to Level Business
+                bool response = OilServiceBusiness.getInstance().RecordOilService(objOilService);
                 Response.Write("<script>alert('Oil Service Added!')</script>");
-                txtCustomerID.Text = null;
-                txtGrade.Text = null;
-                txtMiles.Text = null;
-                txtOilType.Text = null;
-
+                ClearTextBox();
 
                 //Send Email of Confirmation 
 
                 //I need to find a method to send the emails even without professional approval.
-
-                /*MailAddress to = new MailAddress("Receptor");
-                MailAddress from = new MailAddress("Transmitter");
-
-                MailMessage message = new MailMessage(from, to);
-                message.Subject = "Hi!, Jean";
-                message.Body = "This is a just test for Email code.";
-
-                SmtpClient client = new SmtpClient("smtp.live.com", 465) //465 //587
-                {
-                    Credentials = new NetworkCredential("user", "pass"),
-                    EnableSsl = true
-                };
-                // code in brackets above needed if authentication required
-
-                try
-                {
-                    client.Send(message);
-                }
-                catch (SmtpException ex)
-                {
-                    throw ex;
-                } */
             } 
             else
             {
                 Response.Write("<script>alert('Oil Service Information Incorrect!')</script>");
-                txtCustomerID.Text = null;
-                txtCustomerName.Text = null;
-                txtGrade.Text = null;
-                txtMiles.Text = null;
-                txtOilType.Text = null;
+                ClearTextBox();
             }
         }
 
+        //##################################################################//
+
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            txtCustomerID.Text = null;
-            txtCustomerName.Text = null;
-            txtGrade.Text = null;
-            txtMiles.Text = null;
-            txtOilType.Text = null;
+            ClearTextBox();
         }
 
+        //##################################################################//
+
+        //Its CustomerPlate but Visual Studio is.....
         protected void txtCustomerID_TextChanged(object sender, EventArgs e)
         {
             try
@@ -115,20 +100,18 @@ namespace LevelPresentation
 
                 SqlConnection conn = new SqlConnection(ConnectionString);
 
-                SqlDataAdapter da = new SqlDataAdapter("Select ID, Customer from dbo.Customers where ID = " + txtCustomerID.Text, conn); DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter("Select ID, Name, Phone from dbo.Customer where Plate = '" + txtCustomerID.Text + "'", conn); DataTable dt = new DataTable();
 
                 da.Fill(dt);
 
                 txtCustomerName.Text = dt.Rows[0][1].ToString();
+                txtCustomerPhone.Text = dt.Rows[0][2].ToString();
+
             }
             catch(Exception)
             {
                 Response.Write("<script>alert('This Customer dont exits!, You need the add it in the Database in Customer Page.')</script>");
-                txtCustomerID.Text = null;
-                txtCustomerName.Text = null;
-                txtGrade.Text = null;
-                txtMiles.Text = null;
-                txtOilType.Text = null;
+                ClearTextBox();
             }
         }
     }

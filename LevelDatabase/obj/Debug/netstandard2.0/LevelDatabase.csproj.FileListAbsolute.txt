@@ -21,6 +21,5 @@ C:\Users\JMich\source\repos\OilService Project\ProjectService\LevelDatabase\obj\
 C:\Users\JMich\source\repos\OilService Project\ProjectService\LevelDatabase\obj\Debug\netstandard2.0\LevelDatabase.AssemblyInfoInputs.cache
 C:\Users\JMich\source\repos\OilService Project\ProjectService\LevelDatabase\obj\Debug\netstandard2.0\LevelDatabase.AssemblyInfo.cs
 C:\Users\JMich\source\repos\OilService Project\ProjectService\LevelDatabase\obj\Debug\netstandard2.0\LevelDatabase.csproj.CoreCompileInputs.cache
-C:\Users\JMich\source\repos\OilService Project\ProjectService\LevelDatabase\obj\Debug\netstandard2.0\LevelDatabase.csproj.CopyComplete
 C:\Users\JMich\source\repos\OilService Project\ProjectService\LevelDatabase\obj\Debug\netstandard2.0\LevelDatabase.dll
 C:\Users\JMich\source\repos\OilService Project\ProjectService\LevelDatabase\obj\Debug\netstandard2.0\LevelDatabase.pdb
