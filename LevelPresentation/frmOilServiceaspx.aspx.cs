@@ -29,7 +29,6 @@ namespace LevelPresentation
             txtCustomerPhone.Text = null;
             txtGrade.Text = null;
             txtMiles.Text = null;
-            txtOilType.Text = null;
             txtDate.Text = null;
         }
 
@@ -98,7 +97,8 @@ namespace LevelPresentation
 
                 SqlConnection conn = new SqlConnection(ConnectionString);
 
-                SqlDataAdapter da = new SqlDataAdapter("Select ID, CustomerName, Phone from dbo.Customer where Plate = '" + txtCustomerID.Text + "'", conn); DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter("Select ID, CustomerName, Phone from dbo.Customer where Plate = '" + txtCustomerID.Text + "'", conn); 
+                DataTable dt = new DataTable();
 
                 da.Fill(dt);
 

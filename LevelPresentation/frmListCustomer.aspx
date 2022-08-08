@@ -22,6 +22,7 @@
                                     <th>`Customer Name</th>
                                     <th>`Phone</th>
                                     <th>`Email</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody id="tbl_body_table">

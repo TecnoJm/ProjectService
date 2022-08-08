@@ -44,9 +44,7 @@
                         <div class="form-group">
                             <label>OIL TYPE</label>
                         </div>
-                        <div class="form-group">
-                           <!-- <asp:TextBox ID="txtOilType" runat="server" Text="" CssClass="form-control"></asp:TextBox> -->
-
+                        <div class="form-group">                         
                             <asp:DropDownList CssClass="form-control" id="ddlOilType" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlOilType_SelectedIndexChanged"> 
                              <asp:ListItem Value="Standard"> Standard </asp:ListItem>
                              <asp:ListItem Value="Synthetic"> Synthetic </asp:ListItem>

@@ -27,11 +27,15 @@ function addRowDT(data) {
             data[i].Plate,
             data[i].CustomerName,
             data[i].Phone,
-            data[i].Email
+            data[i].Email,
+            '<button type="button" value="Actualizar" title="Actualizar" class="btn btn-primary btn-edit" data-target="#imodal" data-toggle="modal"><i class="fa fa-check-square-o" aria-hidden="true"></i></button>&nbsp;' +
+            '<button type="button" value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fa fa-minus-square-o" aria-hidden="true"></i></button>'
         ]);
     }
 }
 
+
+//Send Data to DataTable in ListCustomer Page with Ajax
 function sendDataAjax() {
     $.ajax({
         type: "POST",
@@ -42,8 +46,6 @@ function sendDataAjax() {
             console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
         },
         success: function (data) {
-            //addRow();
-            console.log(data.d);
             addRowDT(data.d);
         }
     });
