@@ -34,5 +34,17 @@ namespace LevelBusiness
                 throw ex;
             }
         }
+
+        public List<OilService> ListOilService()
+        {
+            try
+            {
+                return OilServiceRegistration.getInstance().ListOilService();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

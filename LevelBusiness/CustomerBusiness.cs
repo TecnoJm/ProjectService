@@ -27,8 +27,22 @@ namespace LevelBusiness
         {
             try
             {
-                //return true;
                 return CustomerRegistration.getInstance().RecordCustomer(objCustomer);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //##################################################################//
+
+        //Instance for Customer Updating
+        public bool UpdateCustomer(Customer objCustomer)
+        {
+            try
+            {
+                return CustomerRegistration.getInstance().UpdateCustomer(objCustomer);
             }
             catch (Exception ex)
             {

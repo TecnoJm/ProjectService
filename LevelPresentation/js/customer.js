@@ -1,12 +1,12 @@
 ﻿function templateRow() {
     var template = "<tr>";
-    template += ("<td>" + "123" + "</td>");
-    template += ("<td>" + "Jorge Junior" + "</td>");
-    template += ("<td>" + "Rodriguez Castillo" + "</td>");
-    template += ("<td>" + "123" + "</td>");
-    template += ("<td>" + "123" + "</td>");
-    template += ("<td>" + "123" + "</td>");
-    template += ("<td>" + "123" + "</td>");
+    template += ("<td>" + "" + "</td>");
+    template += ("<td>" + "" + "</td>");
+    template += ("<td>" + "" + "</td>");
+    template += ("<td>" + "" + "</td>");
+    template += ("<td>" + "" + "</td>");
+    template += ("<td>" + "" + "</td>");
+    template += ("<td>" + "" + "</td>");
     template += "</tr>";
     return template;
 }
@@ -18,7 +18,9 @@ function addRow() {
     }
 }
 
-//Add data to DataTable tbl_Customers
+var tabla, data
+
+//Add data to DataTable tbl_customers
 function addRowDT(data) {
     var tabla = $("#tbl_customers").DataTable();
     for (var i = 0; i < data.length; i++) {
@@ -34,6 +36,34 @@ function addRowDT(data) {
     }
 }
 
+//Edit, Delete and Update buttons
+$(document).on('click', '.btn-edit', function (e) {
+    e.preventDefault();
+     
+    var row = $(this).parent().parent()[0];
+    data = tabla.fnGetData(row);
+    console.log(data);
+    fillModalData();
+
+});
+
+$(document).on('click', '.btn-delete', function (e) {
+    e.preventDefault();
+    console.log("Delete");
+});
+
+$(document).on('click', '.btnupdate', function (e) {
+    e.preventDefault();
+    updateDataAjax();
+});
+
+//Load Data in Modal
+function fillModalData() {
+    $("#txtCustomerPlateModal").val(data[1]);
+    $("#txtCustomerNameModal").val(data[2]);
+    $("#txtCustomerPhoneModal").val(data[3]);
+    $("#txtCustomerEmailModal").val(data[4]);
+}
 
 //Send Data to DataTable in ListCustomer Page with Ajax
 function sendDataAjax() {
@@ -50,6 +80,34 @@ function sendDataAjax() {
         }
     });
 }
+
+
+function updateDataAjax() {
+
+    var obj  = JSON.stringify({ id: JSON.stringify(data[1]), direccion: $("#txtCustomerPlateModal").val() });
+    var obj2 = JSON.stringify({ id: JSON.stringify(data[1]), direccion: $("#txtCustomerNameModal").val() });
+    var obj3 = JSON.stringify({ id: JSON.stringify(data[1]), direccion: $("#txtCustomerPhoneModal").val() });
+    var obj4 = JSON.stringify({ id: JSON.stringify(data[1]), direccion: $("#txtCustomerEmailModal").val() });
+
+    $.ajax({
+        type: "POST",
+        url: "frmListCustomer.aspx/UpdateCustomer",
+        data: obj, obj2, obj3, obj4,
+        dataType: "json",
+        contentType: 'application/json; charset=utf-8',
+        error: function (xhr, ajaxOptions, thrownError) {
+            console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
+        },
+        success: function (response) {
+            if (response.d) {
+                alert("Record updated!");
+            } else {
+                alert("Could not update record!");
+            }
+        }
+    });
+}
+
 
 //Calling to SendDataAjax Function Javacsript
 sendDataAjax(); 

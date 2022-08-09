@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="frmListCustomer.aspx.cs" Inherits="LevelPresentation.frmListCustomer" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="frmListCustomer.aspx.cs" Inherits="LevelPresentation.frmListCustomer" ClientIDMode="Static" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -19,9 +19,9 @@
                                 <tr>
                                     <th>Code</th>
                                     <th>Plate</th>
-                                    <th>`Customer Name</th>
-                                    <th>`Phone</th>
-                                    <th>`Email</th>
+                                    <th>Customer Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -35,4 +35,47 @@
         </div>
         <!-- End Datatable -->
     </section>
+
+    <div class="modal fade" id="imodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Update Record</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Customer Name</label>
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtCustomerNameModal" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label>Plate</label>
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtCustomerPlateModal" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtCustomerPhoneModal" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtCustomerEmailModal" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnupdate">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+    <script src="js/customer.js" type="text/javascript"></script>
 </asp:Content>

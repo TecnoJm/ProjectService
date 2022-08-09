@@ -229,6 +229,7 @@
     <Content Include="frmCustomer.aspx" />
     <Content Include="frmGeneralPanel.aspx" />
     <Content Include="frmListCustomer.aspx" />
+    <Content Include="frmListOilService.aspx" />
     <Content Include="frmOilServiceaspx.aspx" />
     <Content Include="img\ajax-loader.gif" />
     <Content Include="img\ajax-loader1.gif" />
@@ -263,6 +264,7 @@
     <Content Include="js\AdminLTE\dashboard.js" />
     <Content Include="js\AdminLTE\demo.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\oilservice.js" />
     <Content Include="js\customer.js" />
     <Content Include="js\jquery-3.1.0.min.js" />
     <Content Include="js\jquery-ui.min.js" />
@@ -415,6 +417,13 @@
     </Compile>
     <Compile Include="frmListCustomer.aspx.designer.cs">
       <DependentUpon>frmListCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmListOilService.aspx.cs">
+      <DependentUpon>frmListOilService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmListOilService.aspx.designer.cs">
+      <DependentUpon>frmListOilService.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmOilServiceaspx.aspx.cs">
       <DependentUpon>frmOilServiceaspx.aspx</DependentUpon>

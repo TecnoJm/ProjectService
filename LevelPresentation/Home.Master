@@ -163,6 +163,12 @@
                             <span>List Customer Page</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="frmListOilService.aspx">
+                            <i class="fa fa-th"></i>
+                            <span>List Oil Service Page</span>
+                        </a>
+                    </li>
                 </ul>
             </section>
         </aside>
@@ -195,6 +201,6 @@
     <script src="js/plugins/datatables/jquery.dataTables.js"></script>
     <script src="js/plugins/datatables/dataTables.bootstrap.js"></script>
     <script src="js/logout.js"></script>
-    <!--(Pendiente) -->
-    <script src="js/customer.js"></script> 
+
+    <asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder>
 </html>

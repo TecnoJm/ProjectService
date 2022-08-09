@@ -25,12 +25,29 @@ namespace LevelPresentation
             {
                 Lista = CustomerBusiness.getInstance().ListCustomer();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Lista = null;
             }
 
             return Lista;
+        }
+
+        [WebMethod]
+        public static bool UpdateCustomer(String id, String Plate, String Name, String Phone, String Email)
+        {
+            Customer objCustomer = new Customer()
+            {
+                ID = Convert.ToInt32(id),
+                Plate = Plate,
+                CustomerName = Name,
+                Phone = Phone,
+                Email = Email
+            };
+
+            bool ok = CustomerBusiness.getInstance().UpdateCustomer(objCustomer);
+            return ok;
+
         }
     }
 }

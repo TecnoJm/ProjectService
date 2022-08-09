@@ -60,6 +60,44 @@ namespace LevelDatabase
 
         //##################################################################//
 
+        public bool UpdateCustomer(Customer objCustomer)
+        {
+            bool ok = false;
+
+            //Connection with Database to Update Customer in the Database
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+
+            try
+            {
+                con = DBConnection.GetInstance().ConnectionDB();
+                cmd = new SqlCommand("spUpdateCustomer", con);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@prmID", objCustomer.ID);
+                cmd.Parameters.AddWithValue("@prmPlate", objCustomer.Plate);
+                cmd.Parameters.AddWithValue("@prmCustomerName", objCustomer.CustomerName);
+                cmd.Parameters.AddWithValue("@prmPhone", objCustomer.Phone);
+                cmd.Parameters.AddWithValue("@prmEmail", objCustomer.Email);
+                con.Open();
+
+                cmd.ExecuteNonQuery();
+                ok = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return ok;
+        }
+
+        //##################################################################//
+
         public List<Customer> ListCustomer()
         {
             List<Customer> Lista = new List<Customer>();
@@ -83,7 +121,7 @@ namespace LevelDatabase
                     objCustomer.Plate = dr["Plate"].ToString();
                     objCustomer.CustomerName = dr["CustomerName"].ToString();
                     objCustomer.Phone = dr["Phone"].ToString();
-                    objCustomer.Email = dr["Email"].ToString();                  
+                    objCustomer.Email = dr["Email"].ToString();
 
                     // Addind objects to the List
                     Lista.Add(objCustomer);
@@ -101,5 +139,8 @@ namespace LevelDatabase
 
             return Lista;
         }
+
+        //##################################################################//
+
     }
 }

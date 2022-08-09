@@ -64,5 +64,52 @@ namespace LevelDatabase
             }
             return response;
         }
+
+        //##################################################################//
+
+        public List<OilService> ListOilService()
+        {
+            List<OilService> Lista = new List<OilService>();
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+
+            try
+            {
+                con = DBConnection.GetInstance().ConnectionDB();
+                cmd = new SqlCommand("spListOilService", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    // Creating objects of OilService Type
+                    OilService objOilService = new OilService();
+                    objOilService.CustomerPlate = dr["CustomerPlate"].ToString();
+                    objOilService.CustomerName = dr["CustomerName"].ToString();
+                    objOilService.CustomerPhone = dr["CustomerPhone"].ToString();
+                    objOilService.Grade = dr["Grade"].ToString();
+                    objOilService.Miles = Convert.ToInt32(dr["Miles"].ToString());
+                    objOilService.OilType = dr["OilType"].ToString();
+                    objOilService.OilType = dr["TodayDate"].ToString();
+                    objOilService.OilType = dr["ChangeDate"].ToString();
+
+                    // Addind objects to the List
+                    Lista.Add(objOilService);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return Lista;
+        }
     }
 }
