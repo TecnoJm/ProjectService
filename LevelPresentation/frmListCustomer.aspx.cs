@@ -61,9 +61,38 @@ namespace LevelPresentation
             tblcustomers.DataBind();
         }
 
-        private void searchCustomerData()
+        private void getCustomers(string searchBy, string searchVal)
         {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=LocalServiceProjectDB;Integrated Security=True";
 
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter adp = new SqlDataAdapter();
+            try
+            {
+                cmd = new SqlCommand("spSearchCustomer", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@prmSearchBy", searchBy);
+                cmd.Parameters.AddWithValue("@prmValue", searchVal);
+                adp.SelectCommand = cmd;
+                adp.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    tblcustomers.DataSource = dt;
+                    tblcustomers.DataBind();
+                }
+                else
+                {
+                    tblcustomers.DataSource = dt;
+                    tblcustomers.DataBind();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         [WebMethod]
@@ -120,23 +149,24 @@ namespace LevelPresentation
             {
                 if (ddlSearchBy.SelectedItem.Text == "Plate")
                 {
-                    //getEmpRecords(ddlSearchBy.SelectedItem.Text, txtSearch.Text.Trim());
+                    getCustomers(ddlSearchBy.SelectedItem.Text, txtSearch.Text.Trim());
                 }
                 else if (ddlSearchBy.SelectedItem.Text == "Name")
                 {
-                    //getEmpRecords(ddlSearchBy.SelectedItem.Text, txtSearch.Text.Trim());
+                    getCustomers(ddlSearchBy.SelectedItem.Text, txtSearch.Text.Trim());
                 }
                 else if (ddlSearchBy.SelectedItem.Text == "Phone")
                 {
-                    //getEmpRecords(ddlSearchBy.SelectedItem.Text, txtSearch.Text.Trim());
+                    getCustomers(ddlSearchBy.SelectedItem.Text, txtSearch.Text.Trim());
                 }
                 else if (ddlSearchBy.SelectedItem.Text == "Email")
                 {
-                    //getEmpRecords(ddlSearchBy.SelectedItem.Text, txtSearch.Text.Trim());
+                    getCustomers(ddlSearchBy.SelectedItem.Text, txtSearch.Text.Trim());
                 }
                 else
                 {
-                    //getEmpRecords(ddlSearchBy.SelectedItem.Text, txtSearch.Text.Trim());
+                    getCustomers(ddlSearchBy.SelectedItem.Text, txtSearch.Text.Trim());
+                    txtSearch.Text = null;
                 }
             }
             catch (Exception)
