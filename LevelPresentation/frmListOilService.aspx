@@ -11,26 +11,31 @@
             <div class="col-xs-12">
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title">Customers List</h3>
+                       <asp:DropDownList ID="ddlSearchBy" runat="server" AutoPostBack="True">
+                         <asp:ListItem Text="All"></asp:ListItem>
+                         <asp:ListItem Text="Plate"></asp:ListItem>   
+                         <asp:ListItem Text="Name"></asp:ListItem>       
+                         <asp:ListItem Text="Phone"></asp:ListItem>
+                         <asp:ListItem Text="Grade"></asp:ListItem>
+                         <asp:ListItem Text="Miles"></asp:ListItem>
+                         <asp:ListItem Text="Oil Type"></asp:ListItem>
+                       </asp:DropDownList>
+                      <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
+                       <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click"></asp:Button>
                     </div>
                     <div class="box-body table-responsive">
-                        <table id="tbl_oilservices" class="table table-bordered table-hover text-center">
-                            <thead>
-                                <tr>
-                                    <th>Plate</th>
-                                    <th>Customer Name</th>
-                                    <th>Customer Phone</th>
-                                    <th>Grade</th>
-                                    <th>Miles</th>
-                                    <th>OilType</th>
-                                    <th>Today Date</th>
-                                    <th>Change Date</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbl_body_table">
-                                <!-- DATA FROM AJAX JAVASCRIPT -->
-                            </tbody>
-                        </table>
+                         <asp:GridView ID="tbloilservice" class="table table-bordered table-hover text-center" AutoGenerateColumns="False" runat="server" >
+                          <Columns>
+                           <asp:BoundField HeaderText="CustomerPlate" DataField="CustomerPlate" />
+                           <asp:BoundField HeaderText="CustomerName" DataField="CustomerName" />
+                           <asp:BoundField HeaderText="CustomerPhone" DataField="CustomerPhone" />
+                           <asp:BoundField HeaderText="Grade" DataField="Grade" />
+                           <asp:BoundField HeaderText="Miles" DataField="Miles" />
+                           <asp:BoundField HeaderText="Oil Type" DataField="OilType" />
+                           <asp:BoundField HeaderText="Date" DataField="TodayDate" />
+                           <asp:BoundField HeaderText="Change Date" DataField="ChangeDate" />
+                          </Columns>
+                        </asp:GridView>   
                     </div>
                 </div>
             </div>

@@ -4,22 +4,22 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LevelEntities;
-using LevelBusiness;
 using System.Web.Services;
 using System.Data;
 using System.Data.SqlClient;
+using LevelEntities;
+using LevelBusiness;
 
 namespace LevelPresentation
 {
     public partial class frmListCustomer : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             LoadGV();
         }
 
-        //Load Data from SQL Table in GridView
         private void LoadGV()
         {
             DataTable GV = new DataTable();
@@ -60,6 +60,37 @@ namespace LevelPresentation
             tblcustomers.DataSource = GV;
             tblcustomers.DataBind();
         }
+
+        private void ClearTextBox()
+        {
+            txtID.Text = null;
+            txtPlate.Text = null;
+            txtName.Text = null;
+            txtPhone.Text = null;
+            txtEmail.Text = null;
+        }
+
+        private void EnabledFalseTextBox()
+        {
+            txtID.Enabled= false;
+            txtPlate.Enabled = false;
+            txtName.Enabled = false;
+            txtPhone.Enabled = false;
+            txtEmail.Enabled = false;
+            btnUpdate.Enabled = false;
+        }
+
+        private void EnabledTrueTextBox()
+        {
+            txtID.Enabled = true;
+            txtPlate.Enabled = true;
+            txtName.Enabled = true;
+            txtPhone.Enabled = true;
+            txtEmail.Enabled = true;
+            btnUpdate.Enabled = true;
+        }
+
+        //##########################################################//
 
         private void getCustomers(string searchBy, string searchVal)
         {
@@ -173,6 +204,47 @@ namespace LevelPresentation
             {
 
             }
+        }
+
+
+        protected void tblcustomers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtID.Text = tblcustomers.SelectedRow.Cells[1].Text;
+            txtPlate.Text = tblcustomers.SelectedRow.Cells[2].Text;
+            txtName.Text = tblcustomers.SelectedRow.Cells[3].Text;
+            txtPhone.Text = tblcustomers.SelectedRow.Cells[4].Text;
+            EnabledTrueTextBox();
+        }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=LocalServiceProjectDB;Integrated Security=True";
+            SqlCommand cmd = new SqlCommand();
+
+            //cmd = new SqlCommand("Update Customer set Plate = '" + txtPlate.Text + "',  CustomerName = '" + txtName.Text + "', Phone = '" + txtPhone.Text + "', Email = '"+ txtEmail.Text +"' where ID = " + Convert.ToInt32(txtID.Text), con);
+            cmd = new SqlCommand("Update Customer set Plate = '" + txtPlate.Text + "',  CustomerName = '" + txtName.Text + "', Phone = '" + txtPhone.Text + "' where ID = " + Convert.ToInt32(txtID.Text), con);
+            /*cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@prmPlate", txtPlate.Text);
+            cmd.Parameters.AddWithValue("@prmCustomerName", txtName.Text);
+            cmd.Parameters.AddWithValue("@prmPhone", txtPhone.Text);
+            cmd.Parameters.AddWithValue("@prmEmail", txtEmail.Text);*/
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            ClearTextBox();
+            EnabledFalseTextBox();
+            LoadGV();
+
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            EnabledFalseTextBox();
+            ClearTextBox();
         }
     }
 }
