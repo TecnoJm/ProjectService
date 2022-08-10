@@ -52,6 +52,19 @@ namespace LevelBusiness
 
         //##################################################################//
 
+        public bool DeleteCustomer(Customer objCustomer)
+        {
+            try
+            {
+                return CustomerRegistration.getInstance().DeleteCustomer(objCustomer);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //##################################################################//
         public List<Customer> ListCustomer()
         {
             try

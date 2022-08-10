@@ -39,17 +39,14 @@ function addRowDT(data) {
 //Edit, Delete and Update buttons
 $(document).on('click', '.btn-edit', function (e) {
     e.preventDefault();
-     
-    var row = $(this).parent().parent()[0];
-    data = tabla.fnGetData(row);
-    console.log(data);
-    fillModalData();
-
+    console.log("Edit");
 });
 
 $(document).on('click', '.btn-delete', function (e) {
     e.preventDefault();
-    console.log("Delete");
+    var row = $(this).parent().parent()[0];
+    var data = tabla.row(row).data();
+    console.log(data);
 });
 
 $(document).on('click', '.btnupdate', function (e) {
@@ -81,7 +78,6 @@ function sendDataAjax() {
     });
 }
 
-
 function updateDataAjax() {
 
     var obj  = JSON.stringify({ id: JSON.stringify(data[1]), direccion: $("#txtCustomerPlateModal").val() });
@@ -108,6 +104,28 @@ function updateDataAjax() {
     });
 }
 
+function deleteDataAjax(data) {
+
+    var obj = JSON.stringify({ id: JSON.stringify(data) });
+
+    $.ajax({
+        type: "POST",
+        url: "frmListCustomer.aspx/DeleteCustomer",
+        data: obj,
+        dataType: "json",
+        contentType: 'application/json; charset=utf-8',
+        error: function (xhr, ajaxOptions, thrownError) {
+            console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
+        },
+        success: function (response) {
+            if (response.d) {
+                alert("Registro eliminado de manera correcta.");
+            } else {
+                alert("No se pudo eliminar el registro.");
+            }
+        }
+    });
+}
 
 //Calling to SendDataAjax Function Javacsript
 sendDataAjax(); 

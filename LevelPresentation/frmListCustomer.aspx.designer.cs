@@ -15,39 +15,39 @@ namespace LevelPresentation
     {
 
         /// <summary>
-        /// txtCustomerNameModal control.
+        /// ddlSearchBy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCustomerNameModal;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSearchBy;
 
         /// <summary>
-        /// txtCustomerPlateModal control.
+        /// txtSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCustomerPlateModal;
+        protected global::System.Web.UI.WebControls.TextBox txtSearch;
 
         /// <summary>
-        /// txtCustomerPhoneModal control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCustomerPhoneModal;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
-        /// txtCustomerEmailModal control.
+        /// tblcustomers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCustomerEmailModal;
+        protected global::System.Web.UI.WebControls.GridView tblcustomers;
     }
 }

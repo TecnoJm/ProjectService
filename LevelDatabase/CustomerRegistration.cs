@@ -98,6 +98,40 @@ namespace LevelDatabase
 
         //##################################################################//
 
+        public bool DeleteCustomer(Customer objCustomer)
+        {
+            bool ok = false;
+
+            //Connection with Database to Delete Customer in the Database
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+
+            try
+            {
+                con = DBConnection.GetInstance().ConnectionDB();
+                cmd = new SqlCommand("spDeleteCustomer", con);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@prmID", objCustomer.ID);
+                con.Open();
+
+                cmd.ExecuteNonQuery();
+                ok = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return ok;
+        }
+
+        //##################################################################//
+        
         public List<Customer> ListCustomer()
         {
             List<Customer> Lista = new List<Customer>();
