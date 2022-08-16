@@ -42,3 +42,4 @@ C:\Users\JMich\source\repos\Oil Service Project\ProjectService\LevelBusiness\obj
 C:\Users\JMich\source\repos\Oil Service Project\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.csproj.CopyComplete
 C:\Users\JMich\source\repos\Oil Service Project\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.dll
 C:\Users\JMich\source\repos\Oil Service Project\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.pdb
+C:\Users\JMich\source\repos\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.csproj.CopyComplete

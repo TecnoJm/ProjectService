@@ -197,3 +197,4 @@ C:\Users\JMich\source\repos\Oil Service Project\ProjectService\LevelPresentation
 C:\Users\JMich\source\repos\Oil Service Project\ProjectService\LevelPresentation\obj\Debug\LevelPresentation.dll
 C:\Users\JMich\source\repos\Oil Service Project\ProjectService\LevelPresentation\obj\Debug\LevelPresentation.pdb
 C:\Users\JMich\source\repos\Oil Service Project\ProjectService\LevelPresentation\obj\Debug\LevelPresentation.csproj.CopyComplete
+C:\Users\JMich\source\repos\ProjectService\LevelPresentation\obj\Debug\LevelPresentation.csproj.CopyComplete

@@ -24,7 +24,7 @@ namespace LevelPresentation
         {
             DataTable GV = new DataTable();
             GV.Columns.AddRange(new DataColumn[]{
-                new DataColumn("ID",typeof(int)),
+                new DataColumn("Plate",typeof(string)),
                 new DataColumn("CustomerName",typeof(string)),
                 new DataColumn("Phone",typeof(string)),
                 new DataColumn("Email",typeof(string))
@@ -46,7 +46,7 @@ namespace LevelPresentation
                 while (dr.Read())
                 {
                     GV.Rows.Add(
-                        dr["ID"].ToString(),
+                        dr["Plate"].ToString(),
                         dr["CustomerName"].ToString(),
                         dr["Phone"].ToString(),
                         dr["Email"].ToString()
@@ -69,7 +69,7 @@ namespace LevelPresentation
 
         private void EnabledFalseTextBox()
         {
-            txtID.Enabled= false;
+            txtID.Enabled = false;
             txtName.Enabled = false;
             txtPhone.Enabled = false;
             txtEmail.Enabled = false;
@@ -206,6 +206,7 @@ namespace LevelPresentation
             txtID.Text = tblcustomers.SelectedRow.Cells[1].Text;
             txtName.Text = tblcustomers.SelectedRow.Cells[2].Text;
             txtPhone.Text = tblcustomers.SelectedRow.Cells[3].Text;
+            txtEmail.Text = tblcustomers.SelectedRow.Cells[4].Text;
             EnabledTrueTextBox();
             btnSearchVehicle.Enabled = true;
         }
@@ -242,7 +243,6 @@ namespace LevelPresentation
 
         protected void btnSearchVehicle_Click(object sender, EventArgs e)
         {
-            bool enable = true;
 
             //SQL Variables to procedure
             SqlConnection con = new SqlConnection();
@@ -252,43 +252,36 @@ namespace LevelPresentation
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter da = new SqlDataAdapter();
 
-            try
+            cmd = new SqlCommand("spListCustomerVehicles", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@prmCustomerName", txtName.Text);
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            if (dt.Rows.Count > 0)
             {
-                if (enable == true)
-                {
-                    btnSearchVehicle.Text = "Back";
-                    cmd = new SqlCommand("spListCustomerVehicles", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@prmCustomerName", txtName.Text);
-                    da.SelectCommand = cmd;
-                    da.Fill(dt);
-
-                    if (dt.Rows.Count > 0)
-                    {
-                        tblcustomers.DataSource = dt;
-                        tblcustomers.DataBind();
-                        enable = false;
-                        btnSearchVehicle.Text = "Back";
-                    }
-                }
-                else
-                {
-                    tblcustomers.DataSource = dt;
-                    tblcustomers.DataBind();
-                }
-
-                if (enable == false)
-                {
-                    LoadGV();
-                    btnSearchVehicle.Enabled = true;
-                    btnSearchVehicle.Text = "Customer Vehicles";
-                    enable = true;
-                }
+                tblcustomers.DataSource = dt;
+                tblcustomers.DataBind();
             }
-            catch (Exception)
+            else
             {
-
+                tblcustomers.DataSource = dt;
+                tblcustomers.DataBind();
             }
+
+            btnSearchVehicle.Enabled = false;
+            btnSearchVehicle.Visible = false;
+            btnBack.Enabled = true;
+            btnBack.Visible = true;
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            LoadGV();
+            btnSearchVehicle.Enabled = false;
+            btnSearchVehicle.Visible = true;
+            btnBack.Enabled = false;
+            btnBack.Visible = false;
         }
     }
 }
