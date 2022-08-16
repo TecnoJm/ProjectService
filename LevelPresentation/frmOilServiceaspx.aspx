@@ -8,6 +8,7 @@
     <section class="content">
         <!-- Row of OIL SERVICE -->
         <div class="row"> 
+          <div class="col-md-6">
             <div class="center">
                 <div class="box box-primary">
                     <div class="box-body">
@@ -15,20 +16,29 @@
                             <label>CAR PLATE</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtCustomerID" runat="server" Text="" CssClass="form-control" OnTextChanged="txtCustomerID_TextChanged" AutoPostBack="True"></asp:TextBox>
+                            <asp:TextBox ID="txtCustomerID" runat="server" Text="" CssClass="form-control" style="text-transform:capitalize;" OnTextChanged="txtCustomerID_TextChanged" AutoPostBack="True"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>CUSTOMER NAME</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtCustomerName" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtCustomerName" runat="server"  Text="" CssClass="form-control" style="text-transform:capitalize;"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>CUSTOMER PHONE</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtCustomerPhone" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtCustomerPhone" Mask="(999)-999-9999" runat="server" Text="" CssClass="form-control"></asp:TextBox>
                         </div>
+                    </div>
+                </div>
+             </div>
+           </div>
+
+             <div class="col-md-6">
+            <div class="center">
+                <div class="box box-primary">
+                    <div class="box-body">
                         <div class="form-group">
                             <label>GRADE</label>
                         </div>
@@ -59,6 +69,7 @@
                     </div>
                 </div>
              </div>
+           </div>
         </div>
 
         <div align="center">

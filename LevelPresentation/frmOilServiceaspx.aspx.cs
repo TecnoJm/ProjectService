@@ -60,14 +60,11 @@ namespace LevelPresentation
             if (txtCustomerID.Text != "" && txtCustomerName.Text != "" && txtCustomerPhone.Text != "" && txtGrade.Text != "" && txtMiles.Text != "" && txtDate.Text != "")
             {
                 OilService objOilService = GetValues();
+
                //Send the information to Level Business
                 bool response = OilServiceBusiness.getInstance().RecordOilService(objOilService);
                 Response.Write("<script>alert('Oil Service Added!')</script>");
                 ClearTextBox();
-
-                //Send Email of Confirmation 
-
-                //I need to find a method to send the emails even without professional approval.
             } 
             else
             {
@@ -85,31 +82,41 @@ namespace LevelPresentation
 
         //##################################################################//
 
-        //Its CustomerPlate but Visual Studio is.....
         protected void txtCustomerID_TextChanged(object sender, EventArgs e)
         {
             try
             {
                 //Search Customer from Customers table.
-                //I need to put this method in a Stored Procedured.
-                string ConnectionString;
-                ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=LocalServiceProjectDB;Integrated Security=True";
-
-                SqlConnection conn = new SqlConnection(ConnectionString);
-
-                SqlDataAdapter da = new SqlDataAdapter("Select ID, CustomerName, Phone from dbo.Customer where Plate = '" + txtCustomerID.Text + "'", conn); 
                 DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand();
+                string ConnectionString;
+                SqlDataAdapter da = new SqlDataAdapter();
+                ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=LocalServiceProjectDB;Integrated Security=True";
+                SqlConnection conn = new SqlConnection(ConnectionString);
+                //SqlDataAdapter da = new SqlDataAdapter("Select ID, CustomerName, Phone from dbo.Customer where Plate = '" + txtCustomerID.Text + "'", conn); 
 
+
+                cmd = new SqlCommand("spSearchCustomer", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@prmSearchBy", txtCustomerID.Text);
+                cmd.Parameters.AddWithValue("@prmValue", txtCustomerID.Text);
+                da.SelectCommand = cmd;
                 da.Fill(dt);
 
-                txtCustomerName.Text = dt.Rows[0][1].ToString();
-                txtCustomerPhone.Text = dt.Rows[0][2].ToString();
-
+                if (dt.Rows.Count > 0)
+                {
+                    txtCustomerName.Text = dt.Rows[0][2].ToString();
+                    txtCustomerPhone.Text = dt.Rows[0][3].ToString();
+                }
+                else if (dt.Rows.Count == 0)
+                {
+                    txtCustomerName.Enabled = true;
+                    txtCustomerPhone.Enabled = true;
+                }
             }
             catch(Exception)
             {
-                Response.Write("<script>alert('This Customer dont exits!, You need the add it in the Database in Customer Page.')</script>");
-                ClearTextBox();
+                 ClearTextBox();
             }
         }
 
@@ -122,12 +129,12 @@ namespace LevelPresentation
             if (ddlOilType.SelectedValue == "Standard")
             {
                 DateTime newDate = nextMonth.AddMonths(3);
-                txtDate.Text = newDate.ToString("yyyy-MM-dd");
+                txtDate.Text = newDate.ToString("dd-MM-yyyy");
             }
             else if (ddlOilType.SelectedValue == "Synthetic")
             {
                 DateTime newDate = nextMonth.AddMonths(5);
-                txtDate.Text = newDate.ToString("yyyy-MM-dd");
+                txtDate.Text = newDate.ToString("dd-MM-yyyy");
             }
         }
     }

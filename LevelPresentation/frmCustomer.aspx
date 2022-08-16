@@ -8,6 +8,7 @@
     <section class="content">
         <!-- Row of CUSTOMER REGISTRATION -->
         <div class="row"> 
+           <div class="col-md-6">
             <div class="center">
                 <div class="box box-primary">
                     <div class="box-body">
@@ -15,13 +16,21 @@
                             <label>PLATE</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtPlate" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtPlate" runat="server" Text="" CssClass="form-control" style="text-transform:capitalize;" ></asp:TextBox>
                         </div>
                             <label>NAME</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtName" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtName" runat="server" Text="" CssClass="form-control" style="text-transform:capitalize;"></asp:TextBox>
                         </div>
+                    </div>
+                </div>
+             </div>
+
+           <div class="col-md-6">
+            <div class="center">
+                <div class="box box-primary">
+                    <div class="box-body">
                         <div class="form-group">
                             <label>PHONE</label>
                         </div>
@@ -37,6 +46,8 @@
                     </div>
                 </div>
              </div>
+           </div>
+        </div>
         <div align="center">
             <table>
                 <tr>

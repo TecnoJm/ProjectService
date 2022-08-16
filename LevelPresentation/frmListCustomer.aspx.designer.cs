@@ -42,6 +42,15 @@ namespace LevelPresentation
         protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
+        /// btnSearchVehicle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearchVehicle;
+
+        /// <summary>
         /// tblcustomers control.
         /// </summary>
         /// <remarks>
@@ -58,15 +67,6 @@ namespace LevelPresentation
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtID;
-
-        /// <summary>
-        /// txtPlate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPlate;
 
         /// <summary>
         /// txtName control.
