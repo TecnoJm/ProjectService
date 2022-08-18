@@ -45,6 +45,7 @@ namespace LevelDatabase
                 cmd.Parameters.AddWithValue("@prmGrade", objOilService.Grade);
                 cmd.Parameters.AddWithValue("@prmMiles", objOilService.Miles);
                 cmd.Parameters.AddWithValue("@prmOilType", objOilService.OilType);
+                cmd.Parameters.AddWithValue("@prmChangeMiles", objOilService.ChangeMiles);
                 cmd.Parameters.AddWithValue("@prmTodayDate", objOilService.TodayDate);
                 cmd.Parameters.AddWithValue("@prmChangeDate", objOilService.ChangeDate);
                 con.Open();
@@ -92,6 +93,7 @@ namespace LevelDatabase
                     objOilService.Grade = dr["Grade"].ToString();
                     objOilService.Miles = Convert.ToInt32(dr["Miles"].ToString());
                     objOilService.OilType = dr["OilType"].ToString();
+                    objOilService.OilType = dr["ChangeMiles"].ToString();
                     objOilService.OilType = dr["TodayDate"].ToString();
                     objOilService.OilType = dr["ChangeDate"].ToString();
 

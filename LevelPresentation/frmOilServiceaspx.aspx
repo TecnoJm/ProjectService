@@ -13,6 +13,9 @@
                 <div class="box box-primary">
                     <div class="box-body">
                         <div class="form-group">
+                            <asp:Label ID="lblCustomer" runat="server" Visible="false" Font-Bold="true" Text="NEW CUSTOMER"></asp:Label>
+                        </div>
+                        <div class="form-group">
                             <label>CAR PLATE</label>
                         </div>
                         <div class="form-group">
@@ -22,13 +25,13 @@
                             <label>CUSTOMER NAME</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtCustomerName" runat="server"  Text="" CssClass="form-control" style="text-transform:capitalize;"></asp:TextBox>
+                            <asp:TextBox ID="txtCustomerName" runat="server" CssClass="form-control" style="text-transform:capitalize;"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>CUSTOMER PHONE</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtCustomerPhone" Mask="(999)-999-9999" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtCustomerPhone" TextMode="Number" runat="server" CssClass="form-control" ></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -43,13 +46,13 @@
                             <label>GRADE</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtGrade" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtGrade" runat="server" Text="" CssClass="form-control" style="text-transform:capitalize;"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>MILES</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtMiles" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtMiles" runat="server" TextMode="Number" CssClass="form-control" OnTextChanged="txtMiles_TextChanged"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>OIL TYPE</label>
@@ -61,10 +64,16 @@
                             </asp:DropDownList>
                         </div>
                         <div class="form-group">
+                            <label>CHANGE MILES</label>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="txtChangeMiles" runat="server" TextMode="Number" Enabled="false" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
                             <label>NEXT CHANGE DATE</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox  ID="txtDate" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox  ID="txtDate" runat="server" Text="" Enabled="false" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                 </div>

@@ -15,7 +15,6 @@ namespace LevelPresentation
         protected void Page_Load(object sender, EventArgs e)
         {
             //Take the Client PC date.
-            txtDate.Enabled = false;
             txtCustomerName.Enabled = false;
             txtCustomerPhone.Enabled = false;
         }
@@ -29,7 +28,9 @@ namespace LevelPresentation
             txtCustomerPhone.Text = null;
             txtGrade.Text = null;
             txtMiles.Text = null;
+            txtChangeMiles.Text = null;
             txtDate.Text = null;
+            lblCustomer.Visible = false;
         }
 
         //##################################################################//
@@ -44,9 +45,11 @@ namespace LevelPresentation
             objOilService.Grade = txtGrade.Text;
             objOilService.Miles = Convert.ToInt32(txtMiles.Text);
             objOilService.OilType = ddlOilType.SelectedItem.Text;
+            objOilService.ChangeMiles = Convert.ToInt32(txtMiles.Text);
 
             //Take the Client PC date in real time.
             objOilService.TodayDate = DateTime.Now.ToString();
+            txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             objOilService.ChangeDate = txtDate.Text;
 
             return objOilService;
@@ -57,7 +60,7 @@ namespace LevelPresentation
         protected void btnRecord_Click(object sender, EventArgs e)
         {
             //Oil Service Registration
-            if (txtCustomerID.Text != "" && txtCustomerName.Text != "" && txtCustomerPhone.Text != "" && txtGrade.Text != "" && txtMiles.Text != "" && txtDate.Text != "")
+            if (txtCustomerID.Text != "" && txtCustomerName.Text != "" && txtCustomerPhone.Text != "" && txtGrade.Text != "" && txtMiles.Text != "" && txtChangeMiles.Text != ""  && txtDate.Text != "")
             {
                 OilService objOilService = GetValues();
 
@@ -93,23 +96,25 @@ namespace LevelPresentation
                 SqlDataAdapter da = new SqlDataAdapter();
                 ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=LocalServiceProjectDB;Integrated Security=True";
                 SqlConnection conn = new SqlConnection(ConnectionString);
-                //SqlDataAdapter da = new SqlDataAdapter("Select ID, CustomerName, Phone from dbo.Customer where Plate = '" + txtCustomerID.Text + "'", conn); 
 
-
-                cmd = new SqlCommand("spSearchCustomer", conn);
+                cmd = new SqlCommand("spSearchCustomerOilService", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@prmSearchBy", txtCustomerID.Text);
                 cmd.Parameters.AddWithValue("@prmValue", txtCustomerID.Text);
                 da.SelectCommand = cmd;
                 da.Fill(dt);
 
                 if (dt.Rows.Count > 0)
                 {
-                    txtCustomerName.Text = dt.Rows[0][2].ToString();
-                    txtCustomerPhone.Text = dt.Rows[0][3].ToString();
+                    txtCustomerName.Text = dt.Rows[0][1].ToString();
+                    txtCustomerPhone.Text = dt.Rows[0][2].ToString();
+                    txtCustomerName.Enabled = false;
+                    txtCustomerPhone.Enabled = false;
                 }
                 else if (dt.Rows.Count == 0)
                 {
+                    lblCustomer.Visible = true;
+                    txtCustomerName.Text = null;
+                    txtCustomerPhone.Text = null;
                     txtCustomerName.Enabled = true;
                     txtCustomerPhone.Enabled = true;
                 }
@@ -129,12 +134,33 @@ namespace LevelPresentation
             if (ddlOilType.SelectedValue == "Standard")
             {
                 DateTime newDate = nextMonth.AddMonths(3);
-                txtDate.Text = newDate.ToString("dd-MM-yyyy");
+                txtDate.Text = newDate.ToString("ddd, dd MMM yyy");
+
+                //Calculate Next Change Miles
+                txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 3000);
             }
             else if (ddlOilType.SelectedValue == "Synthetic")
             {
                 DateTime newDate = nextMonth.AddMonths(5);
-                txtDate.Text = newDate.ToString("dd-MM-yyyy");
+                txtDate.Text = newDate.ToString("ddd, dd MMM yyy");
+
+                //Calculate Next Change Miles
+                txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 5000);
+            }
+        }
+
+        protected void txtMiles_TextChanged(object sender, EventArgs e)
+        {
+            //Create new Date for Oil Service
+            if (ddlOilType.SelectedValue == "Standard")
+            {
+                //Calculate Next Change Miles
+                txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 3000);
+            }
+            else if (ddlOilType.SelectedValue == "Synthetic")
+            {
+                //Calculate Next Change Miles
+                txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 5000);
             }
         }
     }

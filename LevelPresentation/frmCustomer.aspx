@@ -16,16 +16,16 @@
                             <label>PLATE</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtPlate" runat="server" Text="" CssClass="form-control" style="text-transform:capitalize;" ></asp:TextBox>
+                            <asp:TextBox ID="txtPlate" runat="server" Text="" CssClass="form-control"></asp:TextBox>
                         </div>
                             <label>NAME</label>
-                        </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtName" runat="server" Text="" CssClass="form-control" style="text-transform:capitalize;"></asp:TextBox>
+                            <asp:TextBox ID="txtName" runat="server" Text="" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                 </div>
-             </div>
+               </div>
+            </div>
 
            <div class="col-md-6">
             <div class="center">
@@ -37,17 +37,16 @@
                         <div class="form-group">
                             <asp:TextBox ID="txtPhone" runat="server" Text="" CssClass="form-control"></asp:TextBox>
                         </div>
-                        <div class="form-group">
                             <label>EMAIL</label>
-                        </div>
                         <div class="form-group">
                             <asp:TextBox ID="txtEmail" runat="server" Text="" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                 </div>
-             </div>
-           </div>
+               </div>
+            </div>
         </div>
+
         <div align="center">
             <table>
                 <tr>

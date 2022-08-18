@@ -28,6 +28,7 @@ namespace LevelPresentation
                 new DataColumn("CustomerPhone",typeof(string)),
                 new DataColumn("Grade",typeof(string)),
                 new DataColumn("Miles",typeof(string)),
+                new DataColumn("ChangeMiles",typeof(string)),
                 new DataColumn("OilType",typeof(string)),
                 new DataColumn("TodayDate",typeof(string)),
                 new DataColumn("ChangeDate",typeof(string))
@@ -54,6 +55,7 @@ namespace LevelPresentation
                         dr["CustomerPhone"].ToString(),
                         dr["Grade"].ToString(),
                         dr["Miles"].ToString(),
+                        dr["ChangeMiles"].ToString(),
                         dr["OilType"].ToString(),
                         dr["TodayDate"].ToString(),
                         dr["ChangeDate"].ToString()

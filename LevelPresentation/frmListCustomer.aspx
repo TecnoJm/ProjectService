@@ -69,7 +69,7 @@
                             <label>PHONE</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtPhone" runat="server" Text="" ReadOnly="true" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtPhone" runat="server" Text="" Enabled="false" CssClass="form-control"></asp:TextBox>
                         </div>
                             <label>EMAIL</label>
                         <div class="form-group">

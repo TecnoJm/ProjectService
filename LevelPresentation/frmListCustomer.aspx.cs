@@ -217,7 +217,7 @@ namespace LevelPresentation
             con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=LocalServiceProjectDB;Integrated Security=True";
             SqlCommand cmd = new SqlCommand();
 
-            cmd = new SqlCommand("Update Customer set CustomerName = '" + txtName.Text + "', Phone = '" + txtPhone.Text + "' where ID = " + Convert.ToInt32(txtID.Text), con);
+            cmd = new SqlCommand("Update Customer set CustomerName = '" + txtName.Text + "', Phone = '" + txtPhone.Text +"', Email = '" + txtEmail.Text + "' where Plate = " + txtID.Text, con);
             /*cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@prmPlate", txtPlate.Text);
@@ -273,6 +273,7 @@ namespace LevelPresentation
             btnSearchVehicle.Visible = false;
             btnBack.Enabled = true;
             btnBack.Visible = true;
+            ClearTextBox();
         }
 
         protected void btnBack_Click(object sender, EventArgs e)
@@ -282,6 +283,9 @@ namespace LevelPresentation
             btnSearchVehicle.Visible = true;
             btnBack.Enabled = false;
             btnBack.Visible = false;
+
+            ClearTextBox();
+            EnabledFalseTextBox();
         }
     }
 }

@@ -152,21 +152,21 @@
                         </a>
                     </li>
                     <li>
+                        <a href="frmListOilService.aspx">
+                            <i class="fa fa-th"></i>
+                            <span>List Oil Service Page</span>
+                        </a>
+                    </li>
+                     <li>
                         <a href="frmCustomer.aspx">
                             <i class="fa fa-th"></i>
                             <span>Customer Page</span>
                         </a>
                     </li>
-                     <li>
+                    <li>
                         <a href="frmListCustomer.aspx">
                             <i class="fa fa-th"></i>
                             <span>List Customer Page</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="frmListOilService.aspx">
-                            <i class="fa fa-th"></i>
-                            <span>List Oil Service Page</span>
                         </a>
                     </li>
                 </ul>

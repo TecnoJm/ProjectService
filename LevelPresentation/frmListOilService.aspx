@@ -31,6 +31,7 @@
                            <asp:BoundField HeaderText="CustomerPhone" DataField="CustomerPhone" />
                            <asp:BoundField HeaderText="Grade" DataField="Grade" />
                            <asp:BoundField HeaderText="Miles" DataField="Miles" />
+                           <asp:BoundField HeaderText="Change Miles" DataField="ChangeMiles" />
                            <asp:BoundField HeaderText="Oil Type" DataField="OilType" />
                            <asp:BoundField HeaderText="Date" DataField="TodayDate" />
                            <asp:BoundField HeaderText="Change Date" DataField="ChangeDate" />
