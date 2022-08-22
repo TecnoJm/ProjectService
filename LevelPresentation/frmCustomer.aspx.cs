@@ -55,12 +55,13 @@ namespace LevelPresentation
             if (txtName.Text != "" && txtEmail.Text != "" && txtPhone.Text != "")
             {
                 response = CustomerBusiness.getInstance().RecordCustomer(objCustomer);
-                Response.Write("<script>alert('Customer Added!')</script>");
+                pnl1.Visible = true;
                 ClearTextBox();
             }
             else
             {
-                Response.Write("<script>alert('Customer Information Incorrect!')</script>");
+                Response.Write("<script>alert('Nop!')</script>");
+                pnl1.Visible = false;
                 ClearTextBox();
             }
         }

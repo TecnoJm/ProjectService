@@ -43,3 +43,18 @@ C:\Users\JMich\source\repos\Oil Service Project\ProjectService\LevelBusiness\obj
 C:\Users\JMich\source\repos\Oil Service Project\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.dll
 C:\Users\JMich\source\repos\Oil Service Project\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.pdb
 C:\Users\JMich\source\repos\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.csproj.CopyComplete
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\bin\Debug\netstandard2.0\LevelBusiness.deps.json
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\bin\Debug\netstandard2.0\LevelBusiness.dll
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\bin\Debug\netstandard2.0\LevelBusiness.pdb
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\bin\Debug\netstandard2.0\LevelDatabase.dll
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\bin\Debug\netstandard2.0\LevelEntities.dll
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\bin\Debug\netstandard2.0\LevelDatabase.pdb
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\bin\Debug\netstandard2.0\LevelEntities.pdb
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.csproj.AssemblyReference.cache
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.AssemblyInfoInputs.cache
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.AssemblyInfo.cs
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.csproj.CoreCompileInputs.cache
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.csproj.CopyComplete
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.dll
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelBusiness\obj\Debug\netstandard2.0\LevelBusiness.pdb

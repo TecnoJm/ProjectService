@@ -1,10 +1,51 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="frmListCustomer.aspx.cs" Inherits="LevelPresentation.frmListCustomer" ClientIDMode="Static" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section>
         <h1 align="center"> CUSTOMER LIST </h1>
     </section>
+
+    <!-- Styles -->
+
+    <style type="text/css">
+        .Background  
+        {  
+            background-color: Black;  
+            filter: opacity(80%);  
+            opacity: 0.8;  
+        }  
+
+        .img
+        {
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          padding: 5px;
+          width: 150px;
+        }
+
+        .Popup  
+        {  
+            background-color: #FFFFFF;  
+            border-width: 3px;  
+            border-style: solid;  
+            border-color: black;  
+            padding-top: 10px;  
+            padding-left: 10px;  
+            width: 300px;  
+            height: 250px;  
+        }  
+        .lbl  
+        {  
+            font-size:16px;  
+            font-style:italic;  
+            font-weight:bold;  
+        }  
+    </style>  
+
+    <!--   -->
+
     <section class="content">     
         <!-- Datatable Part -->
         <div class="row">
@@ -38,6 +79,22 @@
         </div>
         <!-- End Datatable -->
     </section>
+
+        <!-- Notifications Modal -->
+        <asp:ScriptManager ID="ScriptManager1" runat="server"> </asp:ScriptManager>
+        <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="pnl1" TargetControlID="btnUpdate" 
+            CancelControlID="Button2" BackgroundCssClass="Background">
+         </cc1:ModalPopupExtender>
+
+        <asp:Panel ID="pnl1" runat="server" CssClass="Popup" align="center" style="display:none">
+            <image src="css/images/information.png" width="50" height="50"> </image>
+             <br/> 
+             <br/> 
+            <asp:Label runat="server" CssClass="lbl" Text="Customer Updated Sucessfully!"></asp:Label>
+            <br/> <br/> <br/>
+            <asp:Button ID="Button2" runat="server" CssClass="btn btn-danger" BackColor="Red" Width="200px" Text="Ok"/>
+         </asp:Panel>
+       <!-- Notifications Modal -->
 
     <section class="content">
         <!-- Row of CUSTOMER REGISTRATION -->

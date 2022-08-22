@@ -882,11 +882,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JMich\\source\\repos\\ProjectService\\LevelDatabase\\LevelDatabase.csproj",
+      "projectUniqueName": "C:\\Users\\JMich\\source\\repos\\Oil Service\\ProjectService\\LevelDatabase\\LevelDatabase.csproj",
       "projectName": "LevelDatabase",
-      "projectPath": "C:\\Users\\JMich\\source\\repos\\ProjectService\\LevelDatabase\\LevelDatabase.csproj",
+      "projectPath": "C:\\Users\\JMich\\source\\repos\\Oil Service\\ProjectService\\LevelDatabase\\LevelDatabase.csproj",
       "packagesPath": "C:\\Users\\JMich\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JMich\\source\\repos\\ProjectService\\LevelDatabase\\obj\\",
+      "outputPath": "C:\\Users\\JMich\\source\\repos\\Oil Service\\ProjectService\\LevelDatabase\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -909,8 +909,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\JMich\\source\\repos\\ProjectService\\LevelEntities\\LevelEntities.csproj": {
-              "projectPath": "C:\\Users\\JMich\\source\\repos\\ProjectService\\LevelEntities\\LevelEntities.csproj"
+            "C:\\Users\\JMich\\source\\repos\\Oil Service\\ProjectService\\LevelEntities\\LevelEntities.csproj": {
+              "projectPath": "C:\\Users\\JMich\\source\\repos\\Oil Service\\ProjectService\\LevelEntities\\LevelEntities.csproj"
             }
           }
         }
