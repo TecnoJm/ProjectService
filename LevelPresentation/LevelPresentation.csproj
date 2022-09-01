@@ -401,6 +401,11 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="datasets\CustomerDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomer.aspx.cs">
       <DependentUpon>frmCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -470,6 +475,17 @@
     <Content Include="js\plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="js\plugins\slimScroll\slimScroll.jquery.json" />
     <Content Include="Home.Master" />
+    <Content Include="datasets\CustomerDataset.xsc">
+      <DependentUpon>CustomerDataset.xsd</DependentUpon>
+    </Content>
+    <None Include="datasets\CustomerDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomerDataset.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="datasets\CustomerDataset.xss">
+      <DependentUpon>CustomerDataset.xsd</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -490,6 +506,9 @@
       <Project>{53f15817-05ce-47f3-89e3-95fae8889c49}</Project>
       <Name>LevelEntities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\CustomerReport.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
