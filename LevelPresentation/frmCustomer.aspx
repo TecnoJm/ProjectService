@@ -116,6 +116,5 @@
                 </tr>
             </table>
         </div>
-        <br />
     </section>
 </asp:Content>

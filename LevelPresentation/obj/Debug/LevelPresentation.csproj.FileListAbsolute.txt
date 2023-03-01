@@ -266,3 +266,8 @@ C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelPresentation\bin\Mic
 C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelPresentation\bin\LevelDatabase.pdb
 C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelPresentation\obj\Debug\LevelPresentation.csproj.CopyComplete
 C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelPresentation\bin\AjaxControlToolkit.dll
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelPresentation\bin\SqlServerTypes\x64\msvcr120.dll
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelPresentation\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelPresentation\bin\SqlServerTypes\x86\msvcr120.dll
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelPresentation\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\JMich\source\repos\Oil Service\ProjectService\LevelPresentation\bin\Microsoft.SqlServer.Types.dll
